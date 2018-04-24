@@ -10,8 +10,8 @@ env:
 install:
   - pip install --upgrade pip
   - pip install ansible
-  - apt-get update
-  - apt-get install wget unzip
+  - sudo apt-get update
+  - sudo apt-get install wget unzip
   - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_"${terraform_version}"_linux_amd64.zip
   - unzip terraform_"${terraform_version}_linux_amd64.zip
   - chmod 750 terraform
@@ -23,7 +23,7 @@ script:
   - ansible-playbook ansible/playbook.yml
 
 after_script:
-  - cd terraform ; terraform destroy
+  - cd terraform ; terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" destroy
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
