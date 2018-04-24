@@ -16,24 +16,13 @@ This setup runs many roles and can be used to:
 +-----------------+  |         | Zabbix web frontend |
                      V         | ISC Bind DNS server |
 +--- Application server ---+   | postfix server      |
-| Tomcat                   |   |   - clamav          |
+| Java + Tomcat                   |   |   - clamav          |
 +--------------------------+   |   - spamassassin    |
-                     |         +---------------------+
-                     V                    |
+                     |         | Rundeck             |
+                     V         +---------------------+
 +--- Database server ---+                 |
 | MySQL Database        |                 |
 |   - zabbix            |                 |
 |   - roundcube         | <---------------+
 +-----------------------+
-```
-
-## Terraform
-```
-cd terraform
-terraform apply
-ssh-add id_rsa
-cd ../
-ansible-playbook provisioning/playbook.yml
-cd terraform
-terraform destroy
 ```

@@ -65,6 +65,7 @@ backendservers:
 all:
   vars:
     ansible_user: root
+    ansible_ssh_private_key_file: terraform/id_dsa
     linux_users:
       - name: robertdb
         comment: Robert de Bock
