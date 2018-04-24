@@ -1,9 +1,6 @@
 ---
 language: python
 
-cache:
-  - pip
-
 env:
   - terraform_version=0.11.7
 
@@ -26,6 +23,3 @@ script:
 
 after_script:
   - cd terraform ; terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" destroy
-
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
