@@ -18,11 +18,11 @@ before_install:
 install:
   - cd terraform ; ssh-keygen -f id_dsa -N ""
   - ../bin/terraform init
-  - ../bin/terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" apply
+  - ../bin/terraform apply -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../
 
 script:
   - ansible-playbook ansible/playbook.yml
 
 after_script:
-  - cd terraform ; bin/terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" destroy
+  - cd terraform ; bin/terraform destroy -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
