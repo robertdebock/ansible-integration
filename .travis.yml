@@ -10,8 +10,11 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install wget unzip
   - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_"${terraform_version}"_linux_amd64.zip
+  - ls -l
   - unzip terraform_"${terraform_version}"_linux_amd64.zip
+  - ls -l
   - chmod 750 terraform
+  - ls -l
 
 install:
   - cd terraform ; ssh-keygen
