@@ -7,14 +7,16 @@ cache:
 env:
   - terraform_version=0.11.7
 
-install:
+before_install:
   - pip install --upgrade pip
   - pip install ansible
   - sudo apt-get update
   - sudo apt-get install wget unzip
   - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_"${terraform_version}"_linux_amd64.zip
-  - unzip terraform_"${terraform_version}_linux_amd64.zip
+  - unzip terraform_"${terraform_version}"_linux_amd64.zip
   - chmod 750 terraform
+
+install:
   - cd terraform ; ssh-keygen
   - cd terraform ; terraform init
   - cd terraform ; terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" apply
