@@ -21,6 +21,7 @@ install:
   - ../bin/terraform init
   - ../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
+  - sleep 10
   - ansible-galaxy install -r requirements.yml
   - cd ../
 
@@ -38,7 +39,7 @@ deploy:
     repo: robertdebock/ansible-integration
     target-branch: gh-pages
     skip-cleanup: true
-    github-token: $github_token
+    github-token: "${github_token}"
     keep-history: true
     local-dir: report
     on:
