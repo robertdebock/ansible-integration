@@ -24,7 +24,7 @@
 - src: https://github.com/robertdebock/ansible-role-python-pip.git
   name: robertdebock.python-pip
 - src: https://github.com/robertdebock/ansible-role-roundcubemail.git
-  name: robertdebock.roundcube
+  name: robertdebock.roundcubemail
 - src: https://github.com/robertdebock/ansible-role-rsyslog.git
   name: robertdebock.rsyslog
 - src: https://github.com/robertdebock/ansible-role-rundeck.git
