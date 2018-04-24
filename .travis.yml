@@ -16,7 +16,7 @@ before_install:
   - chmod 750 bin/terraform
 
 install:
-  - cd terraform ; ssh-keygen -f id_dsa -N ""
+  - cd terraform ; ssh-keygen -f id_rsa -N ""
   - ../bin/terraform init
   - ../bin/terraform apply -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../
