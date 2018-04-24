@@ -16,7 +16,7 @@ resource "cloudflare_record" "machine1" {
   name   = "machine1"
   value  = "${digitalocean_droplet.machine1.ipv4_address}"
   type   = "A"
-  ttl    = 300
+  ttl    = 120
 }
 
 resource "digitalocean_droplet" "machine2" {
@@ -32,7 +32,7 @@ resource "cloudflare_record" "machine2" {
   name   = "machine2"
   value  = "${digitalocean_droplet.machine2.ipv4_address}"
   type   = "A"
-  ttl    = 300
+  ttl    = 120
 }
 
 resource "digitalocean_droplet" "machine3" {
@@ -48,7 +48,7 @@ resource "cloudflare_record" "machine3" {
   name   = "machine3"
   value  = "${digitalocean_droplet.machine3.ipv4_address}"
   type   = "A"
-  ttl    = 300
+  ttl    = 120
 }
 
 resource "digitalocean_droplet" "machine4" {
@@ -64,5 +64,5 @@ resource "cloudflare_record" "machine4" {
   name   = "machine4"
   value  = "${digitalocean_droplet.machine4.ipv4_address}"
   type   = "A"
-  ttl    = 300
+  ttl    = 120
 }
