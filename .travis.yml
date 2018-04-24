@@ -19,10 +19,12 @@ install:
   - cd terraform ; ssh-keygen -f id_rsa -N ""
   - ../bin/terraform init
   - ../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd ../ansible
+  - ansible-galaxy install -r requirements.yml
   - cd ../
 
 script:
   - ansible-playbook ansible/playbook.yml
 
 after_script:
-  - cd terraform ; bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd terraform ; ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
