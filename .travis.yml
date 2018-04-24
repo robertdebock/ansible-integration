@@ -14,19 +14,17 @@ before_install:
   - pip install --upgrade pip
   - pip install ansible
   - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_"${terraform_version}"_linux_amd64.zip
-  - ls -l
-  - unzip terraform_"${terraform_version}"_linux_amd64.zip
-  - ls -l
-  - chmod 750 terraform
-  - ls -l
+  - mkdir bin
+  - unzip terraform_"${terraform_version}"_linux_amd64.zip -d bin
+  - chmod 750 bin/terraform
 
 install:
   - cd terraform ; ssh-keygen
-  - cd terraform ; terraform init
-  - cd terraform ; terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" apply
+  - cd terraform ; bin/terraform init
+  - cd terraform ; bin/terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" apply
 
 script:
   - ansible-playbook ansible/playbook.yml
 
 after_script:
-  - cd terraform ; terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" destroy
+  - cd terraform ; bin/terraform -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}" destroy
