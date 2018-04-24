@@ -10,6 +10,7 @@ env:
 before_install:
   - pip install --upgrade pip
   - pip install ansible
+  - pip install ara
   - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_"${terraform_version}"_linux_amd64.zip
   - mkdir bin
   - unzip terraform_"${terraform_version}"_linux_amd64.zip -d bin
@@ -26,5 +27,19 @@ install:
 script:
   - ansible-playbook ansible/playbook.yml
 
+after_success:
+ - ara generate html report
+
 after_script:
   - cd terraform ; ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+
+deploy:
+  - provider: pages
+    repo: robertdebock/ansible-integration
+    target-branch: gh-pages
+    skip-cleanup: true
+    github-token: $github_token
+    keep-history: true
+    local-dir: report
+    on:
+      branch: master
