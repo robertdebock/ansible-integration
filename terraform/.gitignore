@@ -1,0 +1,7 @@
+id_rsa
+id_rsa.pub
+digitalocean.tf
+cloudflare.tf
+.terraform
+terraform.tfstate
+terraform.tfstate.backup

@@ -1,0 +1,160 @@
+---
+- name: configure shared items for all machines.
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: bootstrap
+      include_role:
+        name: robertdebock.bootstrap
+
+    - name: update
+      include_role:
+        name: robertdebock.update
+
+    - name: epel
+      include_role:
+        name: robertdebock.epel
+
+    - name: rsyslog
+      include_role:
+        name: robertdebock.rsyslog
+
+    - name: postfix
+      include_role:
+        name: robertdebock.postfix
+
+- name: configure shared items for backend and webservers
+  hosts: backendservers:webservers
+  become: yes
+
+  tasks:
+    - name: buildtools
+      include_role:
+        name: robertdebock.buildtools
+
+    - name: scl
+      include_role:
+        name: robertdebock.scl
+
+    - name: python-pip
+      include_role:
+        name: robertdebock.python-pip
+
+- name: configure backend servers
+  hosts: backendservers
+  become: yes
+
+  tasks:
+    - name: dns
+      include_role:
+        name: robertdebock.dns
+
+    - name: clamav
+      include_role:
+        name: robertdebock.clamav
+
+    - name: spamassassin
+      include_role:
+        name: robertdebock.spamassassin
+
+    - name: mysql
+      include_role:
+        name: robertdebock.mysql
+
+    - name: create database
+      mysql_db:
+        name: "{{ item }}"
+      with_items: "{{ mysql_databases }}"
+
+    - name: create linux users
+      user:
+        name: "{{ item.name }}"
+        comment: "{{ item.comment }}"
+        password: "{{ item.password }}"
+      with_items: "{{ linux_users }}"
+
+    - name: create mysql users
+      mysql_user:
+        name: "{{ item.name }}"
+        password: "{{ item.password }}"
+        priv: "{{ item.priv }}"
+        host: "{{ item.host }}"
+      with_items: "{{ mysql_users }}"
+
+    - name: php
+      include_role:
+        name: robertdebock.php
+
+    - name: httpd
+      include_role:
+        name: robertdebock.httpd
+
+    - name: roundcubemail
+      include_role:
+        name: robertdebock.roundcubemail
+
+    - name: java
+      include_role:
+        name: robertdebock.java
+
+    - name: rundeck
+      include_role:
+        name: robertdebock.rundeck
+      
+- name: configure application servers
+  hosts: applicationservers
+  become: yes
+
+  tasks:
+    - name: java
+      include_role:
+        name: robertdebock.java
+
+    - name: tomcat
+      include_role:
+        name: robertdebock.tomcat
+
+- name: configure webservers
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: httpd
+      include_role:
+        name: robertdebock.httpd
+
+- name: configure zabbix on all machines
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: zabbix
+      include_role:
+        name: robertdebock.zabbix
+
+- name: integration tests
+  hosts: backendservers
+
+  tasks:
+    - name: redirection from http to https
+      uri:
+        url: http://{{ hostvars['machine1.meinit.nl']['inventory_hostname'] }}
+        follow_redirects: none
+        status_code: 301
+
+    - name: show default page on https
+      uri:
+        url: https://{{ hostvars['machine1.meinit.nl']['inventory_hostname'] }}/
+        status_code: 403
+        validate_certs: no
+
+    - name: show web applications
+      uri:
+        url: https://{{ hostvars['machine1.meinit.nl']['inventory_hostname'] }}/{{ item }}
+        status_code: 201
+        validate_certs: no
+      with_items:
+        - roundcubemail
+        - zabbix
