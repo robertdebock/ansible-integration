@@ -24,7 +24,6 @@ install:
   - ansible-galaxy install -r requirements.yml
   - cd ../
   - until ansible -m ping all ; do sleep 3 ; done
-  - echo "UserKnownHostsFile /dev/null" >> ~/.ssh/config
 
 script:
   - ansible-playbook ansible/playbook.yml
