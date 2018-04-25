@@ -25,6 +25,14 @@
       include_role:
         name: robertdebock.postfix
 
+    - name: fail2ban
+      include_role:
+        name: robertdebock.fail2ban
+
+    - name: ntp
+      include_role:
+        name: robertdebock.ntp
+
 - name: configure shared items for backendservers and webservers
   hosts: backendservers:webservers
   become: yes
@@ -120,6 +128,10 @@
     - name: rundeck
       include_role:
         name: robertdebock.rundeck
+
+    - name: phpmyadmin
+      include_role:
+        name: robertdebock.phpmyadmin
       
 - name: configure application servers
   hosts: applicationservers
@@ -129,6 +141,10 @@
     - name: java
       include_role:
         name: robertdebock.java
+
+    - name: haveged
+      include_role:
+        name: robertdebock.haveged
 
     - name: tomcat
       include_role:
