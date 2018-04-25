@@ -4,16 +4,17 @@ webservers:
     machine1.meinit.nl:
   vars:
     postfix_relayhost: "[machine4.meinit.nl]"
+    rsyslog_remote: machine4.meinit.nl
     httpd_applications:
       - name: zabbix
         location: /zabbix
-        backend_url: "https://{{ hostvars['machine4.meinit.nl']['inventory_hostname'] }}:8080/zabbix"
+        backend_url: "https://machine4.meinit.nl:8080/zabbix"
       - name: roundcubemail
         location: /roundcubemail
-        backend_url: "https://{{ hostvars['machine4.meinit.nl']['inventory_hostname'] }}/roundcubemail"
+        backend_url: "https://machine4.meinit.nl/roundcubemail"
       - name: rundeck
         location: /rundeck
-        backend_url: "https://{{ hostvars['machine4.meinit.nl']['inventory_hostname'] }}/rundeck"
+        backend_url: "https://machine4.meinit.nl/rundeck"
 
 applicationservers:
   hosts:
@@ -73,3 +74,5 @@ all:
       - name: robertdb
         comment: Robert de Bock
         password: "$6$FHM5RfKd33/xKoUo$Io/VK01U7BXLE6HISycXevQiFYrWAGVV9i68roeo.iCeAJ64uRsTExhRYwrYW12bDQK1Pl3FGaMJ6i/QZDkEl1"
+    rsyslog_receiver: yes
+    zabbix_agent_server_address: machine4.meinit.nl
