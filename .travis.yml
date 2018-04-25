@@ -28,11 +28,9 @@ install:
 script:
   - ansible-playbook ansible/playbook.yml
 
-after_success:
- - ara generate html report
-
 after_script:
   - cd terraform ; ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - ara generate html report
 
 deploy:
   - provider: pages
