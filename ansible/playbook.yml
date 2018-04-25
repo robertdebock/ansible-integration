@@ -17,10 +17,6 @@
       include_role:
         name: robertdebock.epel
 
-    - name: update
-      include_role:
-        name: robertdebock.update
-
     - name: rsyslog
       include_role:
         name: robertdebock.rsyslog
@@ -45,6 +41,14 @@
     - name: python-pip
       include_role:
         name: robertdebock.python-pip
+
+- name: update all servers
+  hosts: all
+
+  tasks:
+    - name: update
+      include_role:
+        name: robertdebock.update
 
 - name: configure database server
   hosts: databaseservers

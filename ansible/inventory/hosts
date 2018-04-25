@@ -61,6 +61,9 @@ backendservers:
           - name: mail1
             value: "{{ hostvars['machine4.meinit.nl']['ansible_default_ipv4']['address'] }}"
     roundcubemail_database_url: "mysql://roundcube:roundcube@{{ hostvars['machine3.meinit.nl']['inventory_hostname'] }}/roundcube"
+    zabbix_server: present
+    zabbix_server_database_host: "{{ hostvars['machine3.meinit.nl']['ansible_default_ipv4']['address'] }}"
+    zabbix_web: present
 
 all:
   vars:
