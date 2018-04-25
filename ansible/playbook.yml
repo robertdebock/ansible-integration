@@ -9,6 +9,10 @@
       include_role:
         name: robertdebock.bootstrap
 
+    - name: digitalocean-agent
+      include_role:
+        name: robertdebock.digitalocean-agent
+
     - name: epel
       include_role:
         name: robertdebock.epel

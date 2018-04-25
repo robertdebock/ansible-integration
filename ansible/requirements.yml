@@ -7,6 +7,8 @@
   name: robertdebock.clamav
 - src: https://github.com/robertdebock/ansible-role-dns.git
   name: robertdebock.dns
+- src: https://github.com/robertdebock/ansible-role-digitalocean-agent.git
+  name: robertdebock.digitalocean-agent
 - src: https://github.com/robertdebock/ansible-role-epel.git
   name: robertdebock.epel
 - src: https://github.com/robertdebock/ansible-role-haveged.git
