@@ -26,3 +26,7 @@ This setup runs many roles and can be used to:
 |   - roundcube         | <---------------+
 +-----------------------+
 ```
+
+## Report
+
+Every integration test saves a [report](https://robertdebock.nl/ansible-integration/).
