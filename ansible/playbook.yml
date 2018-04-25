@@ -9,13 +9,13 @@
       include_role:
         name: robertdebock.bootstrap
 
-    - name: update
-      include_role:
-        name: robertdebock.update
-
     - name: epel
       include_role:
         name: robertdebock.epel
+
+    - name: update
+      include_role:
+        name: robertdebock.update
 
     - name: rsyslog
       include_role:
