@@ -34,11 +34,11 @@ databaseservers:
       - name: zabbix
         password: zabbix
         priv: "*.*:ALL"
-        host: "{{ hostvars['machine4.meinit.nl']['ansible_default_ipv4']['address'] }}"
+        host: machine4.meinit.nl
       - name: roundcube
         password: roundcube
         priv: "*.*:ALL"
-        host: "{{ hostvars['machine4.meinit.nl']['ansible_default_ipv4']['address'] }}"
+        host: machine4.meinit.nl
 
 backendservers:
   hosts:
@@ -62,9 +62,9 @@ backendservers:
           - name: mail1
             value: "{{ hostvars['machine4.meinit.nl']['ansible_default_ipv4']['address'] }}"
     phpmyadmin_database_host: machine3.meinit.nl
-    roundcubemail_database_url: "mysql://roundcube:roundcube@{{ hostvars['machine3.meinit.nl']['inventory_hostname'] }}/roundcube"
+    roundcubemail_database_url: "mysql://roundcube:roundcube@machine3.meinit.nl/roundcube"
     zabbix_server: present
-    zabbix_server_database_host: "{{ hostvars['machine3.meinit.nl']['ansible_default_ipv4']['address'] }}"
+    zabbix_server_database_host: machine3.meinit.nl
     zabbix_web: present
 
 all:
