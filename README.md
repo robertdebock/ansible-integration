@@ -16,7 +16,7 @@ This setup runs many roles and can be used to:
 +-----------------+  |         | Zabbix web frontend |
                      V         | ISC Bind DNS server |
 +--- Application server ---+   | postfix server      |
-| Java + Tomcat                   |   |   - clamav          |
+| Java + Tomcat            |   |   - clamav          |
 +--------------------------+   |   - spamassassin    |
                      |         | Rundeck             |
                      V         +---------------------+
