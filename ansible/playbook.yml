@@ -12,6 +12,7 @@
     - name: create linux users
       user:
         name: "{{ item.name }}"
+        groups: "{{ item.groups }}"
         comment: "{{ item.comment }}"
       with_items: "{{ linux_users }}"
       loop_control:
