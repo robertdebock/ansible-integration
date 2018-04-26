@@ -23,7 +23,7 @@ install:
   - cd ../ansible
   - ansible-galaxy install -r roles/requirements.yml
   - cd ../
-  - until ansible -m ping all ; do sleep 3 ; done
+  - ansible-playbook ansible/wait.yml
 
 script:
   - ansible-playbook ansible/playbook.yml
