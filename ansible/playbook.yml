@@ -9,6 +9,18 @@
       include_role:
         name: robertdebock.bootstrap
 
+    - name: create linux users
+      user:
+        name: "{{ item.name }}"
+        comment: "{{ item.comment }}"
+      with_items: "{{ linux_users }}"
+
+    - name: Set authorized key took from file
+      authorized_key:
+        user: "{{ item.name }}"
+        key: "{{ item.key }}"
+      with_items: "{{ linux_users }}"
+
     - name: digitalocean-agent
       include_role:
         name: robertdebock.digitalocean-agent
@@ -71,13 +83,6 @@
       mysql_db:
         name: "{{ item }}"
       with_items: "{{ mysql_databases }}"
-
-    - name: create linux users
-      user:
-        name: "{{ item.name }}"
-        comment: "{{ item.comment }}"
-        password: "{{ item.password }}"
-      with_items: "{{ linux_users }}"
 
     - name: create mysql users
       mysql_user:
