@@ -26,6 +26,13 @@
       loop_control:
         label: "{{ item.name }}"
 
+    - name: allow wheel to use sudo
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: "^%wheel\s"
+        line: "%wheel ALL=(ALL) NOPASSWD: ALL"
+
     - name: digitalocean-agent
       include_role:
         name: robertdebock.digitalocean-agent
