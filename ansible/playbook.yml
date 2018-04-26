@@ -93,8 +93,11 @@
 
     - name: create database
       mysql_db:
-        name: "{{ item }}"
+        name: "{{ item.name }}"
       with_items: "{{ mysql_databases }}"
+      loop_control:
+        label: "{{ item.name }}"
+
 
     - name: create mysql users
       mysql_user:
@@ -103,8 +106,6 @@
         priv: "{{ item.priv }}"
         host: "{{ item.host }}"
       with_items: "{{ mysql_users }}"
-      loop_control:
-        label: "{{ item.name }}"
 
 - name: configure backendservers
   hosts: backendservers
