@@ -11,6 +11,8 @@
   name: robertdebock.digitalocean-agent
 - src: https://github.com/robertdebock/ansible-role-epel.git
   name: robertdebock.epel
+- src: https://github.com/robertdebock/ansible-role-fail2ban.git
+  name: robertdebock.fail2ban
 - src: https://github.com/robertdebock/ansible-role-haveged.git
   name: robertdebock.haveged
 - src: https://github.com/robertdebock/ansible-role-httpd.git
