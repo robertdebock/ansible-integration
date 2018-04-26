@@ -27,8 +27,6 @@ install:
 
 script:
   - ansible-playbook ansible/playbook.yml
-
-before_deploy:
   - cd terraform
   - ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../
