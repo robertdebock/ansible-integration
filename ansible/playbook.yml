@@ -106,6 +106,8 @@
         priv: "{{ item.priv }}"
         host: "{{ item.host }}"
       with_items: "{{ mysql_users }}"
+      loop_control:
+        label: "{{ item.name }}"
 
 - name: configure backendservers
   hosts: backendservers
