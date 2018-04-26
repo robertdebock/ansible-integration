@@ -30,7 +30,7 @@
       lineinfile:
         path: /etc/sudoers
         state: present
-        regexp: "^%wheel\s"
+        regexp: '^%wheel\s'
         line: "%wheel ALL=(ALL) NOPASSWD: ALL"
 
     - name: digitalocean-agent
