@@ -8,7 +8,7 @@ webservers:
     httpd_applications:
       - name: zabbix
         location: /zabbix
-        backend_url: "https://machine4.meinit.nl:8080/zabbix"
+        backend_url: "https://machine4.meinit.nl/zabbix"
       - name: roundcubemail
         location: /roundcubemail
         backend_url: "https://machine4.meinit.nl/roundcubemail"
@@ -34,11 +34,11 @@ databaseservers:
       - name: zabbix
         password: zabbix
         priv: "*.*:ALL"
-        host: "{{ hostvars['machine1.meinit.nl']['ansible_default_ipv4']['address'] }}"
+        host: "{{ hostvars['machine4.meinit.nl']['ansible_default_ipv4']['address'] }}"
       - name: roundcube
         password: roundcube
         priv: "*.*:ALL"
-        host: "{{ hostvars['machine1.meinit.nl']['ansible_default_ipv4']['address'] }}"
+        host: "{{ hostvars['machine4.meinit.nl']['ansible_default_ipv4']['address'] }}"
 
 backendservers:
   hosts:
