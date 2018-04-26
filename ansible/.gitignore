@@ -1,3 +1,0 @@
-playbook.retry
-roles/*
-!roles/requirements.yml
