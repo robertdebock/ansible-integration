@@ -21,8 +21,12 @@
   name: robertdebock.java
 - src: https://github.com/robertdebock/ansible-role-mysql.git
   name: robertdebock.mysql
+- src: https://github.com/robertdebock/ansible-role-ntp.git
+  name: robertdebock.ntp
 - src: https://github.com/robertdebock/ansible-role-php.git
   name: robertdebock.php
+- src: https://github.com/robertdebock/ansible-role-phpmyadmin.git
+  name: robertdebock.phpmyadmin
 - src: https://github.com/robertdebock/ansible-role-postfix.git
   name: robertdebock.postfix
 - src: https://github.com/robertdebock/ansible-role-python-pip.git
