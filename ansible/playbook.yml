@@ -175,9 +175,15 @@
         - http
         - https
 
-    - name: allow 10050/tcp traffic
+    - name: allow zabbix traffic
       firewalld:
         service: 10050/tcp
+        state: enabled
+        permanent: true
+
+    - name: allow rsyslog traffic
+      firewalld:
+        service: 514/tcp
         state: enabled
         permanent: true
 
