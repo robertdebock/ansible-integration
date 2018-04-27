@@ -91,6 +91,12 @@
       include_role:
         name: robertdebock.mysql
 
+    - name: allow mysql traffic
+      firewalld:
+        service: mysql
+        state: enabled
+        permanent: true
+
     - name: create database
       mysql_db:
         name: "{{ item.name }}"
@@ -117,6 +123,12 @@
     - name: dns
       include_role:
         name: robertdebock.dns
+
+    - name: allow dns traffic
+      firewalld:
+        service: dns
+        state: enabled
+        permanent: true
 
     - name: clamav
       include_role:
@@ -153,7 +165,22 @@
     - name: phpmyadmin
       include_role:
         name: robertdebock.phpmyadmin
-      
+
+    - name: allow web traffic
+      firewalld:
+        service: "{{ item }}"
+        state: enabled
+        permanent: true
+      with_items:
+        - http
+        - https
+
+    - name: allow 10050/tcp traffic
+      firewalld:
+        service: 10050/tcp
+        state: enabled
+        permanent: true
+
 - name: configure application servers
   hosts: applicationservers
   become: yes
@@ -171,6 +198,12 @@
       include_role:
         name: robertdebock.tomcat
 
+    - name: allow 8080/tcp traffic
+      firewalld:
+        service: 8080/tcp
+        state: enabled
+        permanent: true
+
 - name: configure webservers
   hosts: webservers
   become: yes
@@ -179,6 +212,15 @@
     - name: httpd
       include_role:
         name: robertdebock.httpd
+
+    - name: allow web traffic
+      firewalld:
+        service: "{{ item }}"
+        state: enabled
+        permanent: true
+      with_items:
+        - http
+        - https
 
 - name: configure zabbix on all machines
   hosts: all
