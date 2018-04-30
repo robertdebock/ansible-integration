@@ -1,5 +1,5 @@
 ---
 - src: https://github.com/robertdebock/ansible-role-bootstrap.git
   name: robertdebock.bootstrap
-- src: https://github.com/robertdebock/ansible-role-postfix.git
-  name: robertdebock.postfix
+- src: https://github.com/robertdebock/ansible-role-rsyslog.git
+  name: robertdebock.rsyslog

@@ -23,7 +23,7 @@ resource "digitalocean_droplet" "machine2" {
   image    = "centos-7-x64"
   name     = "machine2.meinit.nl"
   region   = "ams3"
-  size     = "1gb"
+  size     = "512mb"
   ssh_keys = ["${digitalocean_ssh_key.default.id}"]
 }
 
@@ -38,7 +38,7 @@ resource "cloudflare_record" "machine2" {
 resource "digitalocean_droplet" "machine3" {
   image    = "centos-7-x64"
   name     = "machine3.meinit.nl"
-  region   = "fra1"
+  region   = "ams3"
   size     = "512mb"
   ssh_keys = ["${digitalocean_ssh_key.default.id}"]
 }

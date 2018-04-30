@@ -1,0 +1,25 @@
+---
+- name: tests
+  hosts: backendservers
+
+  tasks:
+    - name: redirection from http to https
+      uri:
+        url: http://{{ hostvars['machine1.meinit.nl']['inventory_hostname'] }}
+        follow_redirects: none
+        status_code: 301
+
+    - name: show default page on https
+      uri:
+        url: https://{{ hostvars['machine1.meinit.nl']['inventory_hostname'] }}/
+        status_code: 403
+        validate_certs: no
+
+    - name: show web applications
+      uri:
+        url: https://{{ hostvars['machine1.meinit.nl']['inventory_hostname'] }}/{{ item }}
+        status_code: 201
+        validate_certs: no
+      with_items:
+        - roundcubemail
+        - zabbix
