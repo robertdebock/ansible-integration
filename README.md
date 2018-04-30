@@ -2,32 +2,15 @@
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-integration.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-integration)
 
-This setup runs many roles and can be used to:
+This setup runs many scenarios which include many roles and can be used to:
 - Test Ansible roles.
 - Demonstrate the intended usage of these roles.
 
 ## Setup
 
-```
-+--- Webserver ---+
-| Serve web pages |
-| Proxy requests: |            +--- Backendserver ---+
-| - roundcubemail | ---------> | Zabbix server       |
-| - zabbix        |            | Roundcubemail       |
-| - application   | -+         | rsyslog server      |
-+-----------------+  |         | Zabbix web frontend |
-                     V         | ISC Bind DNS server |
-+--- Application server ---+   | postfix server      |
-| Java + Tomcat            |   |   - clamav          |
-+--------------------------+   |   - spamassassin    |
-                     |         | Rundeck             |
-                     V         +---------------------+
-+--- Database server ---+                 |
-| MySQL Database        |                 |
-|   - zabbix            |                 |
-|   - roundcube         | <---------------+
-+-----------------------+
-```
+Each integration test is placed in it's own directory and contain:
+1. A terraform configuration to manage hosts.
+2. An ansible configuration to manage the configuration.
 
 ## Report
 

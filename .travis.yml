@@ -5,7 +5,7 @@ cache:
   - pip
 
 env:
-  - terraform_version=0.11.7
+  - test=postfix terraform_version=0.11.7
 
 before_install:
   - pip install --upgrade pip
@@ -17,21 +17,20 @@ before_install:
   - chmod 750 bin/terraform
 
 install:
+  - cd "${test}"
   - cd terraform ; ssh-keygen -f id_rsa -N ""
-  - ../bin/terraform init
-  - ../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - ../../bin/terraform init
+  - ../../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
   - ansible-galaxy install -r roles/requirements.yml
-  - cd ../
-  - ansible-playbook ansible/wait.yml
+  - ansible-playbook wait.yml
 
 script:
-  - ansible-playbook ansible/playbook.yml
-  - sleep 180
-  - cd terraform
-  - ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
-  - cd ../
-  - ara generate html report
+  - ansible-playbook playbook.yml
+  - cd ../terraform
+  - ../../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd ../ansible
+  - ara generate html "${test}"
 
 deploy:
   - provider: pages
@@ -40,6 +39,6 @@ deploy:
     skip-cleanup: true
     github-token: "${github_token}"
     keep-history: true
-    local-dir: report
+    local-dir: "${test}"
     on:
       branch: master

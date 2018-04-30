@@ -50,19 +50,3 @@ resource "cloudflare_record" "machine3" {
   type   = "A"
   ttl    = 300
 }
-
-resource "digitalocean_droplet" "machine4" {
-  image    = "centos-7-x64"
-  name     = "machine4.meinit.nl"
-  region   = "lon1"
-  size     = "2gb"
-  ssh_keys = ["${digitalocean_ssh_key.default.id}"]
-}
-
-resource "cloudflare_record" "machine4" {
-  domain = "meinit.nl"
-  name   = "machine4"
-  value  = "${digitalocean_droplet.machine4.ipv4_address}"
-  type   = "A"
-  ttl    = 300
-}
