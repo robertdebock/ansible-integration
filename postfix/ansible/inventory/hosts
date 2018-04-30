@@ -1,80 +1,28 @@
 ---
-webservers:
+receiving-mailserver:
   hosts:
     machine1.meinit.nl:
   vars:
-    postfix_relayhost: "[machine4.meinit.nl]"
-    rsyslog_remote: machine4.meinit.nl
-    httpd_applications:
-      - name: zabbix
-        location: /zabbix
-        backend_url: "https://machine4.meinit.nl/zabbix"
-      - name: roundcubemail
-        location: /roundcubemail
-        backend_url: "https://machine4.meinit.nl/roundcubemail"
-      - name: rundeck
-        location: /rundeck
-        backend_url: "https://machine4.meinit.nl/rundeck"
+    postfix_mydesination: "example.com, $mydomain, $myhostname, localhost.$mydomain, localhost"
 
-applicationservers:
+outgoing-mailserver:
   hosts:
     machine2.meinit.nl:
   vars:
-    postfix_relayhost: "[machine4.meinit.nl]"
+    postfix_mynetworks: "192.168.1.0/24"
 
-databaseservers:
+mailserver-client:
   hosts:
     machine3.meinit.nl:
   vars:
-    postfix_relayhost: "[machine4.meinit.nl]"
-    mysql_databases:
-      - name: zabbix
-      - name: roundcube
-    mysql_users:
-      - name: zabbix
-        password: zabbix
-        priv: "*.*:ALL"
-        host: machine4.meinit.nl
-      - name: roundcube
-        password: roundcube
-        priv: "*.*:ALL"
-        host: machine4.meinit.nl
-
-backendservers:
-  hosts:
-    machine4.meinit.nl:
-  vars:
-    postfix_mydestination: "meinit.nl, $mydomain, $myhostname, localhost.$mydomain, localhost"
-    dns_zones:
-      - name: example.com
-        ttl: 3600
-        ns:
-          - name: dns1.example.com.
-        mx:
-          - name: mail1.example.com.
-            priority: 10
-        records:
-          - name: www
-            ttl: 60
-            value: "{{ hostvars['machine1.meinit.nl']['ansible_default_ipv4']['address'] }}"
-          - name: dns1
-            value: "{{ hostvars['machine4.meinit.nl']['ansible_default_ipv4']['address'] }}"
-          - name: mail1
-            value: "{{ hostvars['machine4.meinit.nl']['ansible_default_ipv4']['address'] }}"
-    phpmyadmin_database_host: machine3.meinit.nl
-    roundcubemail_database_url: "mysql://roundcube:roundcube@machine3.meinit.nl/roundcube"
-    zabbix_server: present
-    zabbix_server_database_host: machine3.meinit.nl
-    zabbix_web: present
+    postfix_relayhost: "[machine2.meinit.nl]"
 
 all:
   vars:
     ansible_user: root
-    ansible_ssh_private_key_file: terraform/id_rsa
+    ansible_ssh_private_key_file: ../terraform/id_rsa
     linux_users:
       - name: robertdb
         groups: wheel
         comment: Robert de Bock
         key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCWswOogkZz/ihQA0lENCwDwSzmtmBWtFwzIzDlfa+eb4rBt6rZBg7enKeMqYtStI/NDneBwZUFBDIMu5zJTbvg7A60/WDhWXZmU21tZnm8K7KREFYOUndc6h//QHig6IIaIwwBZHF1NgXLtZ0qrUUlNU5JSEhDJsObMlPHtE4vFP8twPnfc7hxAnYma5+knU6qTMCDvhBE5tGJdor4UGeAhu+SwSVDloYtt1vGTmnFn8M/OD/fRMksusPefxyshJ37jpB4jY/Z9vzaNHwcj33prwl1b/xRfxr/+KRJsyq+ZKs9u2TVw9g4p+XLdfDtzZ8thR2P3x3MFrZOdFmCbo/5"
-    rsyslog_receiver: yes
-    zabbix_agent_server_address: machine4.meinit.nl
