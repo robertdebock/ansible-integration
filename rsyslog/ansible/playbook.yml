@@ -37,6 +37,6 @@
       include_role:
         name: robertdebock.digitalocean-agent
 
-    - name: postfix
+    - name: rsyslog
       include_role:
-        name: robertdebock.postfix
+        name: robertdebock.rsyslog
