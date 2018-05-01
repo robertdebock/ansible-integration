@@ -7,6 +7,7 @@ cache:
 env:
   - test=postfix terraform_version=0.11.7
   - test=rsyslog terraform_version=0.11.7
+  - test=tomcat terraform_version=0.11.7
 
 before_install:
   - pip install --upgrade pip
