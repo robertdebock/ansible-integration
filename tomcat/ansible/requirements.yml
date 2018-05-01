@@ -1,0 +1,19 @@
+---
+- src: https://github.com/robertdebock/ansible-role-bootstrap.git
+  name: robertdebock.bootstrap
+- src: https://github.com/robertdebock/ansible-role-digitalocean-agent.git
+  name: robertdebock.digitalocean-agent
+- src: https://github.com/robertdebock/ansible-role-java.git
+  name: robertdebock.java
+- src: https://github.com/robertdebock/ansible-role-tomcat.git
+  name: robertdebock.tomcat
+- src: https://github.com/robertdebock/ansible-role-java.git
+  name: robertdebock.java
+- src: https://github.com/robertdebock/ansible-role-python-pip.git
+  name: robertdebock.python-pip
+- src: https://github.com/robertdebock/ansible-role-scl.git
+  name: robertdebock.scl
+- src: https://github.com/robertdebock/ansible-role-buildtools.git
+  name: robertdebock.buildtools
+- src: https://github.com/robertdebock/ansible-role-httpd.git
+  name: robertdebock.httpd

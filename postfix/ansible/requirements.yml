@@ -1,5 +1,7 @@
 ---
 - src: https://github.com/robertdebock/ansible-role-bootstrap.git
   name: robertdebock.bootstrap
+- src: https://github.com/robertdebock/ansible-role-digitalocean-agent.git
+  name: robertdebock.digitalocean-agent
 - src: https://github.com/robertdebock/ansible-role-postfix.git
   name: robertdebock.postfix
