@@ -41,6 +41,7 @@
   become: yes
   gather_facts: yes
 
+  tasks:
     - name: java
       include_role:
         name: robertdebock.java
@@ -54,6 +55,7 @@
   become: yes
   gather_facts: yes
 
+  tasks:
     - name: python-pip
       include_role:
         name: robertdebock.python-pip
