@@ -34,6 +34,9 @@ script:
   - cd ../ansible
   - ara generate html ../"${test}-report"
   - cd ../
+  - pwd
+  - ls -l
+  - find ./
 
 deploy:
   - provider: pages
