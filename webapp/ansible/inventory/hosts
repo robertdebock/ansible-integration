@@ -4,8 +4,12 @@ application-server:
     machine6.meinit.nl:
   vars:
     tomcat_layout:
-      wars:
-        - url: https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war
+      - name: sample
+        directory: /opt/sample
+        user: sample
+        group: sample
+        wars:
+          - url: https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war
 
 web-server:
   hosts:
