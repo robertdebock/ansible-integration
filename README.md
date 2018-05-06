@@ -15,6 +15,6 @@ Each integration test is placed in it's own directory and contain:
 ## Report
 
 Every integration test saves a report:
-[mail](https://robertdebock.nl/ansible-integration/mail/report).
-[infrastructure](https://robertdebock.nl/ansible-integration/infrastructure/report).
-[webapp](https://robertdebock.nl/ansible-integration/webapp/report).
+- [mail](https://robertdebock.nl/ansible-integration/mail/report).
+- [infrastructure](https://robertdebock.nl/ansible-integration/infrastructure/report).
+- [webapp](https://robertdebock.nl/ansible-integration/webapp/report).
