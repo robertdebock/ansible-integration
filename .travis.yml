@@ -6,7 +6,7 @@ cache:
 
 env:
   - test=mail terraform_version=0.11.7
-  - test=rsyslog terraform_version=0.11.7
+  - test=infrastructure terraform_version=0.11.7
   - test=webapp terraform_version=0.11.7
 
 before_install:
@@ -32,7 +32,7 @@ script:
   - cd ../terraform
   - ../../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
-  - ara generate html ../"${test}-report"
+  - ara generate html ../report"
   - cd ../
 
 deploy:
