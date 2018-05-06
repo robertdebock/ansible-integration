@@ -42,6 +42,5 @@ deploy:
     skip-cleanup: true
     github-token: "${github_token}"
     keep-history: true
-    local-dir: "${test}/${test}-report"
     on:
       branch: master
