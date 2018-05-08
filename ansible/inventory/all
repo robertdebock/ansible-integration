@@ -1,22 +1,4 @@
 ---
-receiving-mailserver:
-  hosts:
-    machine1.meinit.nl:
-  vars:
-    postfix_mydesination: "example.com, $mydomain, $myhostname, localhost.$mydomain, localhost"
-
-outgoing-mailserver:
-  hosts:
-    machine2.meinit.nl:
-  vars:
-    postfix_mynetworks: "192.168.1.0/24"
-
-mailserver-client:
-  hosts:
-    machine3.meinit.nl:
-  vars:
-    postfix_relayhost: "[machine2.meinit.nl]"
-
 all:
   vars:
     ansible_user: root
