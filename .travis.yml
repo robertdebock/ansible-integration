@@ -39,6 +39,7 @@ deploy:
   - provider: pages
     repo: robertdebock/ansible-integration
     target-branch: gh-pages
+    local_dir: "${test}"/report
     skip-cleanup: true
     github-token: "${github_token}"
     keep-history: true
