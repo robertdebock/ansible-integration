@@ -1,6 +1,6 @@
 ---
 - name: configure shared items for all machines.
-  hosts: all
+  hosts: machine6.meinit.nl:machine7.meinit.nl
   become: yes
 
   tasks:
