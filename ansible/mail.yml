@@ -9,6 +9,10 @@
       include_role:
         name: robertdebock.bootstrap
 
+    - name: digitalocean-agent
+      include_role:
+        name: robertdebock.digitalocean-agent
+
     - name: create linux users
       user:
         name: "{{ item.name }}"
@@ -32,10 +36,6 @@
         state: present
         regexp: '^%wheel\s'
         line: "%wheel ALL=(ALL) NOPASSWD: ALL"
-
-    - name: digitalocean-agent
-      include_role:
-        name: robertdebock.digitalocean-agent
 
     - name: postfix
       include_role:
