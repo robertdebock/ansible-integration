@@ -11,7 +11,7 @@ before_install:
   - pip install --upgrade pip
   - pip install ansible
   - pip install ara
-  - wget https://releases.hashicorp.com/terraform/"${terrafrom_version}"/terraform_"${terraform_version}"_linux_amd64.zip
+  - wget https://releases.hashicorp.com/terraform/"${terraform_version}"/terraform_"${terraform_version}"_linux_amd64.zip
   - mkdir bin
   - unzip terraform_"${terraform_version}"_linux_amd64.zip -d bin
   - chmod 750 bin/terraform
