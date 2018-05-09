@@ -1,8 +1,3 @@
-resource "digitalocean_ssh_key" "default" {
-  name       = "integration"
-  public_key = "${file("id_rsa.pub")}"
-}
-
 resource "digitalocean_droplet" "machine4" {
   image    = "centos-7-x64"
   name     = "machine4.meinit.nl"

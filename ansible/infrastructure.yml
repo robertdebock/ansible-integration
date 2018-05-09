@@ -1,6 +1,6 @@
 ---
 - name: configure shared items for all machines.
-  hosts: all
+  hosts: machine4.meinit.nl:machine5.meinit.nl
   become: yes
   gather_facts: no
 
@@ -8,6 +8,10 @@
     - name: bootstrap
       include_role:
         name: robertdebock.bootstrap
+
+    - name: digitalocean-agent
+      include_role:
+        name: robertdebock.digitalocean-agent
 
     - name: create linux users
       user:
@@ -32,10 +36,6 @@
         state: present
         regexp: '^%wheel\s'
         line: "%wheel ALL=(ALL) NOPASSWD: ALL"
-
-    - name: digitalocean-agent
-      include_role:
-        name: robertdebock.digitalocean-agent
 
     - name: rsyslog
       include_role:

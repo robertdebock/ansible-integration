@@ -1,9 +1,0 @@
----
-- name: wait for all machines to be ready
-  hosts: all
-  gather_facts: no
-
-  tasks:
-    - name: wait for the machine to be up
-      wait_for_connection:
-

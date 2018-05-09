@@ -1,0 +1,77 @@
+---
+- name: configure shared items for all machines.
+  hosts: machine6.meinit.nl:machine7.meinit.nl
+  become: yes
+
+  tasks:
+    - name: bootstrap
+      include_role:
+        name: robertdebock.bootstrap
+
+    - name: digitalocean-agent
+      include_role:
+        name: robertdebock.digitalocean-agent
+
+    - name: create linux users
+      user:
+        name: "{{ item.name }}"
+        groups: "{{ item.groups }}"
+        comment: "{{ item.comment }}"
+      with_items: "{{ linux_users }}"
+      loop_control:
+        label: "{{ item.name }}"
+
+    - name: Set authorized key took from file
+      authorized_key:
+        user: "{{ item.name }}"
+        key: "{{ item.key }}"
+      with_items: "{{ linux_users }}"
+      loop_control:
+        label: "{{ item.name }}"
+
+    - name: allow wheel to use sudo
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^%wheel\s'
+        line: "%wheel ALL=(ALL) NOPASSWD: ALL"
+
+- name: configure items for application servers.
+  hosts: machine6.meinit.nl
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: java
+      include_role:
+        name: robertdebock.java
+
+    - name: tomcat
+      include_role:
+        name: robertdebock.tomcat
+
+- name: configure items for web servers.
+  hosts: machine7.meinit.nl
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: epel
+      include_role:
+        name: robertdebock.epel
+
+    - name: scl
+      include_role:
+        name: robertdebock.scl
+
+    - name: buildtools
+      include_role:
+        name: robertdebock.buildtools
+
+    - name: python-pip
+      include_role:
+        name: robertdebock.python-pip
+
+    - name: httpd
+      include_role:
+        name: robertdebock.httpd

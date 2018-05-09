@@ -5,32 +5,33 @@ cache:
   - pip
 
 env:
-  - test=mail terraform_version=0.11.7
-  - test=infrastructure terraform_version=0.11.7
-  - test=webapp terraform_version=0.11.7
+  - terraform_version=0.11.7
 
 before_install:
   - pip install --upgrade pip
   - pip install ansible
   - pip install ara
-  - wget https://releases.hashicorp.com/terraform/0.11.7/terraform_"${terraform_version}"_linux_amd64.zip
+  - wget https://releases.hashicorp.com/terraform/"${terraform_version}"/terraform_"${terraform_version}"_linux_amd64.zip
   - mkdir bin
   - unzip terraform_"${terraform_version}"_linux_amd64.zip -d bin
   - chmod 750 bin/terraform
 
 install:
-  - cd "${test}"
   - cd terraform ; ssh-keygen -f id_rsa -N ""
-  - ../../bin/terraform init
-  - ../../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - ../bin/terraform init
+  - ../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
-  - ansible-galaxy install -r requirements.yml
+  - ansible-galaxy install -r mail-requirements.yml
+  - ansible-galaxy install -r infrastructure-requirements.yml
+  - ansible-galaxy install -r webapp-requirements.yml
   - ansible-playbook wait.yml
 
 script:
-  - ansible-playbook playbook.yml
+  - ansible-playbook mail.yml
+  - ansible-playbook infrastructure.yml
+  - ansible-playbook webapp.yml
   - cd ../terraform
-  - ../../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
   - ara generate html ../report
   - cd ../
@@ -39,7 +40,7 @@ deploy:
   - provider: pages
     repo: robertdebock/ansible-integration
     target-branch: gh-pages
-    local-dir: "${test}/report"
+    local-dir: "report"
     skip-cleanup: true
     github-token: "${github_token}"
     keep-history: false
