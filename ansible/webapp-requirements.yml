@@ -9,6 +9,8 @@
   name: robertdebock.tomcat
 - src: https://github.com/robertdebock/ansible-role-java.git
   name: robertdebock.java
+- src: https://github.com/robertdebock/ansible-role-epel.git
+  name: robertdebock.epel
 - src: https://github.com/robertdebock/ansible-role-python-pip.git
   name: robertdebock.python-pip
 - src: https://github.com/robertdebock/ansible-role-scl.git
