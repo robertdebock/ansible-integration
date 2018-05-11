@@ -10,7 +10,8 @@ env:
 before_install:
   - pip install --upgrade pip
   - pip install ansible
-  - pip install ara
+  - ansible-galaxy install robertdebock.ara
+  - ansible-playbook -i localhost, localhost before_install.yml
   - wget https://releases.hashicorp.com/terraform/"${terraform_version}"/terraform_"${terraform_version}"_linux_amd64.zip
   - mkdir bin
   - unzip terraform_"${terraform_version}"_linux_amd64.zip -d bin
