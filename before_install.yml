@@ -2,7 +2,7 @@
 - name: before install
   hosts: localhost
   become: yes
-  gather_gacts: no
+  gather_facts: no
 
   roles:
     - robertdebock.bootstrap
