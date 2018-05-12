@@ -6,4 +6,5 @@
 
   roles:
     - robertdebock.bootstrap
+      bootstrap_user: root
     - robertdebock.ara
