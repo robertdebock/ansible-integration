@@ -1,0 +1,10 @@
+---
+- name: before install
+  hosts: localhost
+  become: yes
+  gather_facts: no
+
+  roles:
+    - role: robertdebock.bootstrap
+      bootstrap_user: root
+    - role: robertdebock.ara
