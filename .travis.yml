@@ -28,12 +28,12 @@ install:
   - ansible-galaxy install -r mail-requirements.yml
   - ansible-galaxy install -r infrastructure-requirements.yml
   - ansible-galaxy install -r webapp-requirements.yml
-  - ansible-playbook wait.yml
+  - ansible-playbook -i inventory wait.yml
 
 script:
-  - ansible-playbook mail.yml
-  - ansible-playbook infrastructure.yml
-  - ansible-playbook webapp.yml
+  - ansible-playbook -i inventory mail.yml
+  - ansible-playbook -i inventory infrastructure.yml
+  - ansible-playbook -i inventory webapp.yml
   - cd ../terraform
   - ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
