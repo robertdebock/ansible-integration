@@ -16,11 +16,3 @@
         section: defaults
         option: host_key_checking
         value: False
-
-
-    - name: configure ansible (inventory)
-      ini_file:
-        path: /etc/ansible/ansible.cfg
-        section: defaults
-        option: inventory
-        value: inventory
