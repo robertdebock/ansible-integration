@@ -7,24 +7,17 @@ dist: trusty
 cache:
   - pip
 
-env:
-  - terraform_version=0.11.7
-
 before_install:
   - pip install --upgrade pip
   - pip install ansible
   - ansible-galaxy install -r requirements.yml
   - ansible-playbook -i localhost, -c local before_install.yml
-  - wget https://releases.hashicorp.com/terraform/"${terraform_version}"/terraform_"${terraform_version}"_linux_amd64.zip
-  - mkdir bin
-  - unzip terraform_"${terraform_version}"_linux_amd64.zip -d bin
-  - chmod 750 bin/terraform
 
 install:
-  - cd terraform ; ssh-keygen -f id_rsa -N ""
-  - ../bin/terraform init
-  - ../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
-  - cd ../ansible
+  - ssh-keygen -f id_rsa -N ""
+  - terraform init
+  - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd ansible
   - ansible-galaxy install -r mail-requirements.yml
   - ansible-galaxy install -r infrastructure-requirements.yml
   - ansible-galaxy install -r webapp-requirements.yml
@@ -34,9 +27,7 @@ script:
   - ansible-playbook -i inventory mail.yml
   - ansible-playbook -i inventory infrastructure.yml
   - ansible-playbook -i inventory webapp.yml
-  - cd ../terraform
-  - ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
-  - cd ../ansible
+  - terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - ara generate html ../report
   - cd ../
 
