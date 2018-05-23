@@ -15,9 +15,10 @@ before_install:
 
 install:
   - ssh-keygen -f id_rsa -N ""
+  - cd terraform
   - terraform init
   - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
-  - cd ansible
+  - cd ../ansible
   - ansible-galaxy install -r mail-requirements.yml
   - ansible-galaxy install -r infrastructure-requirements.yml
   - ansible-galaxy install -r webapp-requirements.yml
@@ -27,7 +28,9 @@ script:
   - ansible-playbook -i inventory mail.yml
   - ansible-playbook -i inventory infrastructure.yml
   - ansible-playbook -i inventory webapp.yml
+  - cd ../terraform
   - terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd ../ansible
   - ara generate html ../report
   - cd ../
 
