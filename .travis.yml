@@ -14,8 +14,8 @@ before_install:
   - ansible-playbook -i localhost, -c local before_install.yml
 
 install:
-  - ssh-keygen -f id_rsa -N ""
   - cd terraform
+  - ssh-keygen -f id_rsa -N ""
   - terraform init
   - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
