@@ -19,7 +19,7 @@ install:
   - terraform init
   - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
-  - ansible-config list
+  - ansible --version
   - ansible-galaxy install -r mail-requirements.yml
   - ansible-galaxy install -r infrastructure-requirements.yml
   - ansible-galaxy install -r webapp-requirements.yml
