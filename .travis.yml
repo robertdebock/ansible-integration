@@ -33,14 +33,14 @@ script:
   - cd ../terraform
   - terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
-  - ara generate html ../report
+  - ara generate html ../ansible-integration
   - cd ../
 
 deploy:
   - provider: pages
     repo: robertdebock/ansible-integration
     target-branch: gh-pages
-    local-dir: "report"
+    local-dir: "ansible-integration"
     skip-cleanup: true
     github-token: "${github_token}"
     keep-history: false
