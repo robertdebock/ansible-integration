@@ -24,7 +24,7 @@ install:
   - ansible-galaxy install -r mail-requirements.yml
   - ansible-galaxy install -r infrastructure-requirements.yml
   - ansible-galaxy install -r webapp-requirements.yml
-  - ansible-playbook -i inventory wait.yml
+  - ansible-playbook -vvvv -i inventory wait.yml
 
 script:
   - ansible-playbook -i inventory mail.yml
