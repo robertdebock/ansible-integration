@@ -10,7 +10,6 @@
 
     - role: robertdebock.ara
       ara_configuration_file: ansible/ansible.cfg
-      ara_callback_plugins: /home/travis/virtualenv/python2.7.14/lib/python2.7/site-packages/ara/plugins/callbacks
 
     - role: robertdebock.terraform
 
