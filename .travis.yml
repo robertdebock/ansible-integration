@@ -11,7 +11,7 @@ before_install:
   - pip install --upgrade pip
   - pip install ansible
   - ansible-galaxy install -r requirements.yml
-  - ansible-playbook -i localhost, -c local before_install.yml
+  - ansible-playbook -i localhost, -c local before_install.yml -v
 
 script:
   - cd terraform
@@ -25,7 +25,7 @@ script:
   - ansible-galaxy install -r infrastructure-requirements.yml
   - ansible-galaxy install -r webapp-requirements.yml
   - find /usr/local/lib/python2.7/dist-packages/ara
-  - ansible-playbook -vvvv -i inventory wait.yml
+  - ansible-playbook -v -i inventory wait.yml
   - ansible-playbook -i inventory mail.yml
   - ansible-playbook -i inventory infrastructure.yml
   - ansible-playbook -i inventory webapp.yml
