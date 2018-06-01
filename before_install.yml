@@ -23,4 +23,3 @@
 
   roles:
     - role: robertdebock.ara
-      ara_configuration_file: ~/ansible/ansible.cfg
