@@ -8,6 +8,8 @@
     - role: robertdebock.bootstrap
       bootstrap_user: root
 
+    - role: robertdebock.ara
+
     - role: robertdebock.terraform
 
   tasks:
