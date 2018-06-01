@@ -24,8 +24,7 @@ script:
   - ansible-galaxy install --role-file mail-requirements.yml
   - ansible-galaxy install --role-file infrastructure-requirements.yml
   - ansible-galaxy install --role-file webapp-requirements.yml
-  - find /usr/local/lib/python2.7/dist-packages/ara
-  - ansible-playbook --inventory inventory wait.yml -v
+  - ansible-playbook --inventory inventory wait.yml
   - ansible-playbook --inventory inventory mail.yml
   - ansible-playbook --inventory inventory infrastructure.yml
   - ansible-playbook --inventory inventory webapp.yml
