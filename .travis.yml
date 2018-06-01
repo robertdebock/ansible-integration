@@ -10,7 +10,7 @@ cache:
 before_install:
   - pip install --upgrade pip
   - pip install ansible
-  - ansible-galaxy install -r requirements.yml
+  - ansible-galaxy install --role-file requirements.yml
   - ansible-playbook --inventory localhost, --connection local before_install.yml -v
 
 script:
@@ -21,14 +21,14 @@ script:
   - cd ../ansible
   - ansible --version
   - cat ansible.cfg
-  - ansible-galaxy install -r mail-requirements.yml
-  - ansible-galaxy install -r infrastructure-requirements.yml
-  - ansible-galaxy install -r webapp-requirements.yml
+  - ansible-galaxy install --role-file mail-requirements.yml
+  - ansible-galaxy install --role-file infrastructure-requirements.yml
+  - ansible-galaxy install --role-file webapp-requirements.yml
   - find /usr/local/lib/python2.7/dist-packages/ara
-  - ansible-playbook -v -i inventory wait.yml
-  - ansible-playbook -i inventory mail.yml
-  - ansible-playbook -i inventory infrastructure.yml
-  - ansible-playbook -i inventory webapp.yml
+  - ansible-playbook --inventory inventory wait.yml -v
+  - ansible-playbook --inventory inventory mail.yml
+  - ansible-playbook --inventory inventory infrastructure.yml
+  - ansible-playbook --inventory inventory webapp.yml
 
 after_script:
   - cd ../terraform
