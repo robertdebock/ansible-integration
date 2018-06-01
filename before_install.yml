@@ -1,5 +1,5 @@
 ---
-- name: before install
+- name: before install as root
   hosts: localhost
   become: yes
   gather_facts: no
@@ -7,9 +7,6 @@
   roles:
     - role: robertdebock.bootstrap
       bootstrap_user: root
-
-    - role: robertdebock.ara
-      ara_configuration_file: ansible/ansible.cfg
 
     - role: robertdebock.terraform
 
@@ -20,3 +17,10 @@
         section: defaults
         option: host_key_checking
         value: False
+
+- name: before install as user
+  hosts: localhost
+
+  roles:
+    - role: robertdebock.ara
+      ara_configuration_file: ansible/ansible.cfg
