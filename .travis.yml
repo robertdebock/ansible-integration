@@ -24,6 +24,7 @@ script:
   - ansible-galaxy install --role-file mail-requirements.yml
   - ansible-galaxy install --role-file infrastructure-requirements.yml
   - ansible-galaxy install --role-file webapp-requirements.yml
+  - ansible-galaxy install --role-file tooling-requirements.yml
   - ansible-playbook --inventory inventory wait.yml
   - ansible-playbook --inventory inventory mail.yml
   - ansible-playbook --inventory inventory infrastructure.yml
