@@ -1,4 +1,7 @@
 ---
-tooling-server:
+databaseservers:
   hosts:
     machine8.meinit.nl:
+webservers:
+  hosts:
+    machine9.meinit.nl:
