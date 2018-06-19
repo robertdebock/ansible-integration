@@ -25,8 +25,8 @@
         password: "{{ item.password }}"
         priv: "{{ item.priv }}"
       with_items:
-        - name: root
-          password: DiFfIcUlT
+        - name: phpmyadmin
+          password: PhPmYaDmIn
           priv: "*.*:ALL"
         - name: owncloud
           password: OwNcLoUd
@@ -107,8 +107,8 @@
         name: robertdebock.phpmyadmin
       vars:
         phpmyadmin_database_host: machine9.meinit.nl
-        phpmyadmin_database_user: root
-        phpmyadmin_database_pass: DiFfIcUlT
+        phpmyadmin_database_user: phpmyadmin
+        phpmyadmin_database_pass: PhPmYaDmIn
 
     - name: owncloud
       include_role:
