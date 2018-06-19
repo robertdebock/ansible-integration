@@ -23,3 +23,5 @@
   name: robertdebock.mysql
 - src: https://github.com/robertdebock/ansible-role-phpmyadmin.git
   name: robertdebock.phpmyadmin
+- src: https://github.com/robertdebock/ansible-role-owncloud.git
+  name: robertdebock.owncloud
