@@ -25,6 +25,7 @@ script:
   - ansible-galaxy install --role-file infrastructure-requirements.yml
   - ansible-galaxy install --role-file webapp-requirements.yml
   - ansible-galaxy install --role-file tooling-requirements.yml
+  - sleep 60
   - ansible-playbook --inventory inventory --limit "receiving-mailserver,outgoing-mailserver,mailserver-client" wait.yml
   - ansible-playbook --inventory inventory mail.yml
   - ansible-playbook --inventory inventory --limit "rsyslog-server,rsyslog-client" wait.yml
