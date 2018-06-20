@@ -68,7 +68,7 @@
           host: machine9.meinit.nl
         - name: owncloud
           password: OwNcLoUd
-          priv: "owncloud:*:ALL"
+          priv: "owncloud.*:ALL"
           host: machine9.meinit.nl
 
 - name: configure items for frontend machines.
