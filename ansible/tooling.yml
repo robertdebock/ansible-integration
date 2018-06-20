@@ -60,6 +60,7 @@
         name: "{{ item.name }}"
         password: "{{ item.password }}"
         priv: "{{ item.priv }}"
+        host: "{{ item.host | default('localhost') }}"
       with_items:
         - name: phpmyadmin
           password: PhPmYaDmIn
