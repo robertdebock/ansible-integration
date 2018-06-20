@@ -5,6 +5,7 @@
 
   tasks:
     - name: wait for the machines to be up
-      wait_for_connection:
+      wait_for:
+        port: 22
 
 
