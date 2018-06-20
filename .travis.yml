@@ -25,11 +25,15 @@ script:
   - ansible-galaxy install --role-file infrastructure-requirements.yml
   - ansible-galaxy install --role-file webapp-requirements.yml
   - ansible-galaxy install --role-file tooling-requirements.yml
-  - ansible-playbook --inventory inventory wait.yml
+  - ansible-playbook --inventory inventory --limit "receiving-mailserver,outgoing-mailserver,mailserver-client" wait.yml
   - ansible-playbook --inventory inventory mail.yml
+  - ansible-playbook --inventory inventory --limit "rsyslog-server,rsyslog-client" wait.yml
   - ansible-playbook --inventory inventory infrastructure.yml
+  - ansible-playbook --inventory inventory --limit "application-server,web-server" wait.yml
   - ansible-playbook --inventory inventory webapp.yml
+  - ansible-playbook --inventory inventory --limit "databaseservers,webservers" wait.yml
   - ansible-playbook --inventory inventory tooling.yml
+  - sleep 180
   - ara generate html ../ansible-integration
 
 deploy:
