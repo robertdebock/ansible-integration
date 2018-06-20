@@ -31,7 +31,6 @@ script:
   - ansible-playbook --inventory inventory webapp.yml
   - ansible-playbook --inventory inventory tooling.yml
   - ara generate html ../ansible-integration
-  - sleep 180
 
 deploy:
   - provider: pages

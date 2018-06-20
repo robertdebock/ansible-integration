@@ -13,7 +13,7 @@
       include_role:
         name: robertdebock.mysql
       vars:
-        mysql_bind_adress: 0.0.0.0
+        mysql_bind_address: 0.0.0.0
 
     - name: create mysql databases
       mysql_db:
