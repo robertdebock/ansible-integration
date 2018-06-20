@@ -19,8 +19,6 @@ script:
   - terraform init
   - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
-  - ansible --version
-  - cat ansible.cfg
   - ansible-galaxy install --role-file mail-requirements.yml
   - ansible-galaxy install --role-file infrastructure-requirements.yml
   - ansible-galaxy install --role-file webapp-requirements.yml
