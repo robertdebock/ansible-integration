@@ -65,11 +65,11 @@
         - name: phpmyadmin
           password: PhPmYaDmIn
           priv: "*.*:ALL"
-          host: machine9.meinit.nl
+          host: machine8.meinit.nl
         - name: owncloud
           password: OwNcLoUd
           priv: "owncloud.*:ALL"
-          host: machine9.meinit.nl
+          host: machine8.meinit.nl
 
 - name: configure items for frontend machines.
   hosts: webservers
