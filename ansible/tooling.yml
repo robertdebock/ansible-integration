@@ -38,7 +38,7 @@
         line: "%wheel ALL=(ALL) NOPASSWD: ALL"
 
 - name: configure items for database machines.
-  hosts: databaseservers
+  hosts: machine8.meinit.nl
   become: yes
   gather_facts: no
 
@@ -65,14 +65,14 @@
         - name: phpmyadmin
           password: PhPmYaDmIn
           priv: "*.*:ALL"
-          host: machine8.meinit.nl
+          host: machine9.meinit.nl
         - name: owncloud
           password: OwNcLoUd
           priv: "owncloud.*:ALL"
-          host: machine8.meinit.nl
+          host: machine9.meinit.nl
 
 - name: configure items for frontend machines.
-  hosts: webservers
+  hosts: machine9.meinit.nl
   become: yes
   gather_facts: no
 
@@ -113,7 +113,7 @@
       include_role:
         name: robertdebock.phpmyadmin
       vars:
-        phpmyadmin_database_host: machine9.meinit.nl
+        phpmyadmin_database_host: machine8.meinit.nl
         phpmyadmin_database_user: phpmyadmin
         phpmyadmin_database_pass: PhPmYaDmIn
 
@@ -121,6 +121,6 @@
       include_role:
         name: robertdebock.owncloud
       vars:
-        owncloud_database_host: machine9.meinit.nl
+        owncloud_database_host: machine8.meinit.nl
         owncloud_database_user: owncloud
         owncloud_database_pass: OwNcLoUd
