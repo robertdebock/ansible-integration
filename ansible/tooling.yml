@@ -9,9 +9,9 @@
       include_role:
         name: robertdebock.bootstrap
 
-    - name: digitalocean-agent
+    - name: digitalocean_agent
       include_role:
-        name: robertdebock.digitalocean-agent
+        name: robertdebock.digitalocean_agent
 
     - name: create linux users
       user:
@@ -97,9 +97,9 @@
       include_role:
         name: robertdebock.scl
 
-    - name: python-pip
+    - name: python_pip
       include_role:
-        name: robertdebock.python-pip
+        name: robertdebock.python_pip
 
     - name: httpd
       include_role:

@@ -2,7 +2,7 @@
 - src: https://github.com/robertdebock/ansible-role-bootstrap.git
   name: robertdebock.bootstrap
 - src: https://github.com/robertdebock/ansible-role-digitalocean-agent.git
-  name: robertdebock.digitalocean-agent
+  name: robertdebock.digitalocean_agent
 - src: https://github.com/robertdebock/ansible-role-java.git
   name: robertdebock.java
 - src: https://github.com/robertdebock/ansible-role-tomcat.git
@@ -12,7 +12,7 @@
 - src: https://github.com/robertdebock/ansible-role-epel.git
   name: robertdebock.epel
 - src: https://github.com/robertdebock/ansible-role-python-pip.git
-  name: robertdebock.python-pip
+  name: robertdebock.python_pip
 - src: https://github.com/robertdebock/ansible-role-scl.git
   name: robertdebock.scl
 - src: https://github.com/robertdebock/ansible-role-buildtools.git
