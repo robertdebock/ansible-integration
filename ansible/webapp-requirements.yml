@@ -11,9 +11,5 @@
   name: robertdebock.epel
 - src: https://github.com/robertdebock/ansible-role-python-pip.git
   name: robertdebock.python_pip
-- src: https://github.com/robertdebock/ansible-role-scl.git
-  name: robertdebock.scl
-- src: https://github.com/robertdebock/ansible-role-buildtools.git
-  name: robertdebock.buildtools
 - src: https://github.com/robertdebock/ansible-role-httpd.git
   name: robertdebock.httpd

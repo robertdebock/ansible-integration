@@ -89,14 +89,6 @@
       include_role:
         name: robertdebock.epel
 
-    - name: buildtools
-      include_role:
-        name: robertdebock.buildtools
-
-    - name: scl
-      include_role:
-        name: robertdebock.scl
-
     - name: python_pip
       include_role:
         name: robertdebock.python_pip

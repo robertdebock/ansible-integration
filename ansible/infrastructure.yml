@@ -40,3 +40,7 @@
     - name: rsyslog
       include_role:
         name: robertdebock.rsyslog
+
+    - name: ntp
+      include_role:
+        name: robertdebock.ntp
