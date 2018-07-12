@@ -15,7 +15,7 @@ resource "cloudflare_record" "machine8" {
 }
 
 resource "digitalocean_droplet" "machine9" {
-  image    = "fedora-28-x64"
+  image    = "centos-7-x64"
   name     = "machine9.meinit.nl"
   region   = "fra1"
   size     = "2gb"
