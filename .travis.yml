@@ -27,7 +27,7 @@ script:
   - ansible-playbook --inventory inventory mail.yml
   - ansible-playbook --inventory inventory infrastructure.yml
   - ansible-playbook --inventory inventory webapp.yml
-  - ansible-playbook --inventory inventory tooling.yml -vvvv
+  - ansible-playbook --inventory inventory tooling.yml -vvv
   - ara generate html ../ansible-integration
 
 deploy:
