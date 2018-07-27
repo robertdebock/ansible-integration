@@ -24,10 +24,10 @@ script:
   - ansible-galaxy install --role-file webapp-requirements.yml
   - ansible-galaxy install --role-file tooling-requirements.yml
   - sleep 90
+  - ansible-playbook --inventory inventory tooling.yml
   - ansible-playbook --inventory inventory mail.yml
   - ansible-playbook --inventory inventory infrastructure.yml
   - ansible-playbook --inventory inventory webapp.yml
-  - ansible-playbook --inventory inventory tooling.yml
   - ara generate html ../ansible-integration
 
 deploy:
