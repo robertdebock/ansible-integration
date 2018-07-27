@@ -84,6 +84,8 @@
     - name: rundeck
       include_role:
         name: robertdebock.rundeck
+      vars:
+        rundeck_url: http://machine9.meinit.nl:4440/
 
     - name: epel
       include_role:
