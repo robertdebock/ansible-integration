@@ -3,6 +3,7 @@
   hosts: machine1.meinit.nl:machine2.meinit.nl:machine3.meinit.nl
   become: yes
   gather_facts: no
+  any_errors_fatal: true
 
   tasks:
     - name: bootstrap

@@ -2,6 +2,7 @@
 - name: configure shared items for all machines.
   hosts: machine6.meinit.nl:machine7.meinit.nl
   become: yes
+  any_errors_fatal: true
 
   tasks:
     - name: bootstrap
@@ -40,6 +41,7 @@
   hosts: machine6.meinit.nl
   become: yes
   gather_facts: yes
+  any_errors_fatal: true
 
   tasks:
     - name: java
@@ -54,6 +56,7 @@
   hosts: machine7.meinit.nl
   become: yes
   gather_facts: yes
+  any_errors_fatal: true
 
   tasks:
     - name: epel
