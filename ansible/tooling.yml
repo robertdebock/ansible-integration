@@ -1,7 +1,7 @@
 ---
 - name: configure shared items for tooling
   hosts: databaseservers:webservers
-  become: yes
+  become: no
   gather_facts: no
   any_errors_fatal: true
 
@@ -9,6 +9,8 @@
     - name: bootstrap
       include_role:
         name: robertdebock.bootstrap
+      vars:
+        bootstrap_user: root
 
     - name: digitalocean_agent
       include_role:
