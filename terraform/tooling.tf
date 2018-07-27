@@ -15,7 +15,7 @@ resource "cloudflare_record" "machine8" {
 }
 
 resource "digitalocean_droplet" "machine9" {
-  image    = "centos-7-x64"
+  image    = "ubuntu-18-04-x64"
   name     = "machine9.meinit.nl"
   region   = "lon1"
   size     = "2gb"
