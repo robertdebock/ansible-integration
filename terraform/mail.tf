@@ -1,5 +1,5 @@
 resource "digitalocean_droplet" "machine1" {
-  image    = "centos-7-x64"
+  image    = "debian-9-5-x64"
   name     = "machine1.meinit.nl"
   region   = "nyc3"
   size     = "512mb"
@@ -15,7 +15,7 @@ resource "cloudflare_record" "machine1" {
 }
 
 resource "digitalocean_droplet" "machine2" {
-  image    = "centos-7-x64"
+  image    = "fedora-28-x64"
   name     = "machine2.meinit.nl"
   region   = "nyc3"
   size     = "512mb"
