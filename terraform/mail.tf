@@ -1,5 +1,5 @@
 resource "digitalocean_droplet" "machine1" {
-  image    = "debian-9-5-x64"
+  image    = "debian-9-x64"
   name     = "machine1.meinit.nl"
   region   = "nyc3"
   size     = "512mb"
