@@ -23,7 +23,6 @@ script:
   - ansible-galaxy install --role-file mail-requirements.yml
   - ansible-galaxy install --role-file infrastructure-requirements.yml
   - ansible-galaxy install --role-file webapp-requirements.yml
-  - sleep 90
   - ansible-playbook --inventory inventory tooling.yml
   - ansible-playbook --inventory inventory mail.yml
   - ansible-playbook --inventory inventory infrastructure.yml
