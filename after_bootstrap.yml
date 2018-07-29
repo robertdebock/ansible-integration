@@ -1,0 +1,12 @@
+---
+- name: after bootstrap
+  hosts: localhost
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: include mitogen
+      include_role:
+        name: robertdebock.mitogen
+      vars:
+        mitogen_ansible_file: ansible/ansible.cfg

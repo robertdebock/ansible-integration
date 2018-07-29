@@ -5,10 +5,6 @@
   any_errors_fatal: true
 
   tasks:
-    - name: bootstrap
-      include_role:
-        name: robertdebock.bootstrap
-
     - name: digitalocean_agent
       include_role:
         name: robertdebock.digitalocean_agent

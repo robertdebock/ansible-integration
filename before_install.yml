@@ -18,12 +18,6 @@
         option: host_key_checking
         value: False
 
-#    - name: include mitogen
-#      include_role:
-#        name: robertdebock.mitogen
-#      vars:
-#        mitogen_ansible_file: ansible/ansible.cfg
-
 - name: before install as user
   hosts: localhost
 

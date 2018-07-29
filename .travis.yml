@@ -19,10 +19,13 @@ script:
   - terraform init
   - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
+  - ansible-galaxy install --role-file bootstrap-requirements.yml
   - ansible-galaxy install --role-file mail-requirements.yml
   - ansible-galaxy install --role-file infrastructure-requirements.yml
   - ansible-galaxy install --role-file webapp-requirements.yml
   - ansible-galaxy install --role-file tooling-requirements.yml
+  - ansible-playbook --inventory inventory bootstrap.yml
+  - ansible-playbook --inventory localhost, --connection local before_install.yml --extra-vars "ara_configuration_file=${TRAVIS_BUILD_DIR}/ansible/ansible.cfg"
   - ansible-playbook --inventory inventory mail.yml
   - ansible-playbook --inventory inventory infrastructure.yml
   - ansible-playbook --inventory inventory webapp.yml

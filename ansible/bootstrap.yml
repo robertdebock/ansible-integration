@@ -1,0 +1,11 @@
+---
+- name: configure shared items for all machines.
+  hosts: all
+  become: yes
+  gather_facts: no
+  any_errors_fatal: true
+
+  tasks:
+    - name: bootstrap
+      include_role:
+        name: robertdebock.bootstrap
