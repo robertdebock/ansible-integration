@@ -19,14 +19,14 @@ script:
   - terraform init
   - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
   - cd ../ansible
-  - ansible-galaxy install --role-file tooling-requirements.yml
   - ansible-galaxy install --role-file mail-requirements.yml
   - ansible-galaxy install --role-file infrastructure-requirements.yml
   - ansible-galaxy install --role-file webapp-requirements.yml
-  - ansible-playbook --inventory inventory tooling.yml
+  - ansible-galaxy install --role-file tooling-requirements.yml
   - ansible-playbook --inventory inventory mail.yml
   - ansible-playbook --inventory inventory infrastructure.yml
   - ansible-playbook --inventory inventory webapp.yml
+  - ansible-playbook --inventory inventory tooling.yml
   - ara generate html ../ansible-integration
 
 deploy:
