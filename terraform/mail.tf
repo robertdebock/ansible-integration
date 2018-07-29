@@ -1,7 +1,17 @@
+resource "random_shuffle" "images" {
+  input = ["debian-9-x64", "fedora-28-x64", "centos-7-x64"]
+  result_count = 1
+}
+
+resource "random_shuffle" "regions" {
+  input = ["ams3", "blr1", "fra1", "lon1", "nyc1", "nyc3", "sfo2", "sgp1", "tor1"]
+  result_count = 1
+}
+
 resource "digitalocean_droplet" "machine1" {
-  image    = "debian-9-x64"
+  image    = ["${random_shuffle.images.result}"]
   name     = "machine1.meinit.nl"
-  region   = "nyc3"
+  region   = ["${random_shuffle.regions.result}"]
   size     = "512mb"
   ssh_keys = ["${digitalocean_ssh_key.default.id}"]
 }
