@@ -15,7 +15,7 @@
 
     - name: create linux groups
       group:
-        name: "{{ item.group }}"
+        name: "{{ item.groups }}"
       with_items: "{{ linux_users }}"
 
     - name: create linux users
