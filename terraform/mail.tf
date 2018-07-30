@@ -9,9 +9,9 @@ resource "random_shuffle" "regions" {
 }
 
 resource "digitalocean_droplet" "machine1" {
-  image    = ["${random_shuffle.images.result[0]}"]
+  image    = ["${flatten(random_shuffle.images.result)}"]
   name     = "machine1.meinit.nl"
-  region   = ["${random_shuffle.regions.result[0]}"]
+  region   = ["${flatten(random_shuffle.regions.result)}"]
   size     = "512mb"
   ssh_keys = ["${digitalocean_ssh_key.default.id}"]
 }
