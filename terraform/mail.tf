@@ -1,10 +1,18 @@
+variable "images" {
+  default = ["debian-9-x64", "fedora-28-x64", "centos-7-x64"]
+}
+
+variable "regions" {
+  default = ["ams3", "blr1", "fra1", "lon1", "nyc1", "nyc3", "sfo2", "sgp1", "tor1"]
+}
+
 resource "random_shuffle" "images" {
-  input = ["debian-9-x64", "fedora-28-x64", "centos-7-x64"]
+  input = ["${var.images}"]
   result_count = 1
 }
 
 resource "random_shuffle" "regions" {
-  input = ["ams3", "blr1", "fra1", "lon1", "nyc1", "nyc3", "sfo2", "sgp1", "tor1"]
+  input = ["${var.regions}"]
   result_count = 1
 }
 
