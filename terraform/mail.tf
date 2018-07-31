@@ -1,25 +1,7 @@
-variable "images" {
-  default = ["debian-9-x64", "fedora-28-x64", "centos-7-x64"]
-}
-
-variable "regions" {
-  default = ["ams3", "blr1", "fra1", "lon1", "nyc1", "nyc3", "sfo2", "sgp1", "tor1"]
-}
-
-resource "random_shuffle" "images" {
-  input = ["${var.images}"]
-  result_count = 1
-}
-
-resource "random_shuffle" "regions" {
-  input = ["${var.regions}"]
-  result_count = 1
-}
-
 resource "digitalocean_droplet" "machine1" {
-  image    = ["${flatten(random_shuffle.images.result[0])}"]
-  name     = "machine1.meinit.nl"
-  region   = ["${flatten(random_shuffle.regions.result[0])}"]
+  image    = "debian-9-x64"
+  ame      = "machine1.meinit.nl"
+  region   = ams3
   size     = "512mb"
   ssh_keys = ["${digitalocean_ssh_key.default.id}"]
 }
