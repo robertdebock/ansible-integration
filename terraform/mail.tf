@@ -1,7 +1,7 @@
 resource "digitalocean_droplet" "machine1" {
   image    = "debian-9-x64"
   ame      = "machine1.meinit.nl"
-  region   = ams3
+  region   = "ams3"
   size     = "512mb"
   ssh_keys = ["${digitalocean_ssh_key.default.id}"]
 }
