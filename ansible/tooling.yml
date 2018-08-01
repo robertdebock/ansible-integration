@@ -2,7 +2,7 @@
 - name: configure items for database machines.
   hosts: machine8.meinit.nl
   become: yes
-  gather_facts: no
+  gather_facts: yes
   any_errors_fatal: true
 
   tasks:
@@ -37,7 +37,7 @@
 - name: configure items for frontend machines.
   hosts: machine9.meinit.nl
   become: yes
-  gather_facts: no
+  gather_facts: yes
   any_errors_fatal: true
 
   tasks:
