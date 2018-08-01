@@ -4,6 +4,7 @@
   become: yes
   gather_facts: no
   any_errors_fatal: true
+  strategy: free
 
   tasks:
     - name: bootstrap
