@@ -27,7 +27,7 @@
       loop_control:
         label: "{{ item.name }}"
 
-    - name: Set authorized key took from file
+    - name: place ssh public key
       authorized_key:
         user: "{{ item.name }}"
         key: "{{ item.key }}"
