@@ -2,7 +2,6 @@
 - name: configure items for application servers.
   hosts: machine6.meinit.nl
   become: yes
-  gather_facts: yes
   any_errors_fatal: true
 
   tasks:
@@ -17,7 +16,6 @@
 - name: configure items for web servers.
   hosts: machine7.meinit.nl
   become: yes
-  gather_facts: yes
   any_errors_fatal: true
 
   tasks:
