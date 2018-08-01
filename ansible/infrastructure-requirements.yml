@@ -1,6 +1,4 @@
 ---
-- src: https://github.com/robertdebock/ansible-role-digitalocean-agent.git
-  name: robertdebock.digitalocean_agent
 - src: https://github.com/robertdebock/ansible-role-ntp.git
   name: robertdebock.ntp
 - src: https://github.com/robertdebock/ansible-role-rsyslog.git
