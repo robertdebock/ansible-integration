@@ -30,7 +30,7 @@ script:
   - ansible-playbook --inventory inventory infrastructure.yml
   - ansible-playbook --inventory inventory webapp.yml
   - ansible-playbook --inventory inventory tooling.yml
-  - ara generate html ../ansible-integration
+  - ARA_IGNORE_PARAMETERS=ansible_env ara generate html ../ansible-integration
 
 deploy:
   - provider: pages
