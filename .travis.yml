@@ -17,7 +17,7 @@ script:
   - cd terraform
   - ssh-keygen -f id_rsa -N ""
   - terraform init
-  - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cf_email}" -var="cloudflare_token=${cf_token}"
   - cd ../ansible
   - ansible-galaxy install --role-file bootstrap-requirements.yml
   - ansible-galaxy install --role-file mail-requirements.yml
@@ -37,7 +37,7 @@ deploy:
     target-branch: gh-pages
     local-dir: "ansible-integration"
     skip-cleanup: true
-    github-token: "${github_token}"
+    github-token: "${gh_token}"
     keep-history: false
     on:
       branch: master
