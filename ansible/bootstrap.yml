@@ -5,6 +5,10 @@
   gather_facts: no
 
   tasks:
+    - name: wait 1 minute.
+      pause:
+        minutes: 1
+
     - name: bootstrap
       include_role:
         name: robertdebock.bootstrap
