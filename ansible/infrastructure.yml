@@ -4,11 +4,6 @@
   become: yes
   any_errors_fatal: true
 
-  tasks:
-    - name: rsyslog
-      include_role:
-        name: robertdebock.rsyslog
-
-    - name: ntp
-      include_role:
-        name: robertdebock.ntp
+  roles:
+    - role: robertdebock.rsyslog
+    - role: robertdebock.ntp

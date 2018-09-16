@@ -4,80 +4,20 @@
   become: yes
   any_errors_fatal: true
 
-  tasks:
-    - name: mysql
-      include_role:
-        name: robertdebock.mysql
-      vars:
-        mysql_bind_address: 0.0.0.0
-
-    - name: create mysql databases
-      mysql_db:
-        name: "{{ item }}"
-      with_items:
-        - owncloud
-
-    - name: create mysql users
-      mysql_user:
-        name: "{{ item.name }}"
-        password: "{{ item.password }}"
-        priv: "{{ item.priv }}"
-        host: "{{ item.host | default('localhost') }}"
-      with_items:
-        - name: phpmyadmin
-          password: PhPmYaDmIn
-          priv: "*.*:ALL"
-          host: machine9.meinit.nl
-        - name: owncloud
-          password: OwNcLoUd
-          priv: "owncloud.*:ALL"
-          host: machine9.meinit.nl
+  roles:
+    - role: robertdebock.mysql
 
 - name: configure items for frontend machines.
   hosts: machine9.meinit.nl
   become: yes
   any_errors_fatal: true
 
-  tasks:
-    - name: java
-      include_role:
-        name: robertdebock.java
-
-    - name: rundeck
-      include_role:
-        name: robertdebock.rundeck
-      vars:
-        rundeck_url: http://machine9.meinit.nl:4440/
-
-    - name: epel
-      include_role:
-        name: robertdebock.epel
-
-    - name: python_pip
-      include_role:
-        name: robertdebock.python_pip
-
-    - name: httpd
-      include_role:
-        name: robertdebock.httpd
-
-    - name: php
-      include_role:
-        name: robertdebock.php
-
-    - name: phpmyadmin
-      include_role:
-        name: robertdebock.phpmyadmin
-      vars:
-        phpmyadmin_database_host: machine8.meinit.nl
-        phpmyadmin_database_user: phpmyadmin
-        phpmyadmin_database_pass: PhPmYaDmIn
-
-    - name: owncloud
-      include_role:
-        name: robertdebock.owncloud
-      vars:
-        owncloud_database_host: machine8.meinit.nl
-        owncloud_database_name: owncloud
-        owncloud_database_user: owncloud
-        owncloud_database_pass: OwNcLoUd
+  roles:
+    - role: robertdebock.java
+    - role: robertdebock.rundeck
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.httpd
+    - role: robertdebock.php
+    - role: robertdebock.phpmyadmin
+    - role: robertdebock.owncloud

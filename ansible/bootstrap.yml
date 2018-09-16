@@ -4,40 +4,8 @@
   become: yes
   gather_facts: no
 
-  tasks:
-    - name: bootstrap
-      include_role:
-        name: robertdebock.bootstrap
-
-    - name: digitalocean_agent
-      include_role:
-        name: robertdebock.digitalocean_agent
-
-    - name: create linux groups
-      group:
-        name: "{{ item.groups }}"
-      with_items: "{{ linux_users }}"
-
-    - name: create linux users
-      user:
-        name: "{{ item.name }}"
-        groups: "{{ item.groups }}"
-        comment: "{{ item.comment }}"
-      with_items: "{{ linux_users }}"
-      loop_control:
-        label: "{{ item.name }}"
-
-    - name: place ssh public key
-      authorized_key:
-        user: "{{ item.name }}"
-        key: "{{ item.key }}"
-      with_items: "{{ linux_users }}"
-      loop_control:
-        label: "{{ item.name }}"
-
-    - name: allow wheel to use sudo
-      lineinfile:
-        path: /etc/sudoers
-        state: present
-        regexp: '^%wheel\s'
-        line: "%wheel ALL=(ALL) NOPASSWD: ALL"
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.common
+    - role: robertdebock.digitalocean_agent
+    - role: robertdebock.users

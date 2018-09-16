@@ -3,3 +3,7 @@
   name: robertdebock.bootstrap
 - src: https://github.com/robertdebock/ansible-role-digitalocean-agent.git
   name: robertdebock.digitalocean_agent
+- src: https://github.com/robertdebock/ansible-role-users.git
+  name: robertdebock.users
+- src: https://github.com/robertdebock/ansible-role-common.git
+  name: robertdebock.common

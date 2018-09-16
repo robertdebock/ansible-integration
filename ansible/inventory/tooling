@@ -2,6 +2,28 @@
 databaseservers:
   hosts:
     machine8.meinit.nl:
+  vars:
+    mysql_bind_address: 0.0.0.0
+    mysql_databases:
+      - name: owncloud
+    mysql_users:
+      - name: phpmyadmin
+        password: PhPmYaDmIn
+        priv: "*.*:ALL"
+        host: machine9.meinit.nl
+      - name: owncloud
+        password: OwNcLoUd
+        priv: "owncloud.*:ALL"
+        host: machine9.meinit.nl
 webservers:
   hosts:
     machine9.meinit.nl:
+  vars:
+    rundeck_url: http://machine9.meinit.nl:4440/
+    phpmyadmin_database_host: machine8.meinit.nl
+    phpmyadmin_database_user: phpmyadmin
+    phpmyadmin_database_pass: PhPmYaDmIn
+    owncloud_database_host: machine8.meinit.nl
+    owncloud_database_name: owncloud
+    owncloud_database_user: owncloud
+    owncloud_database_pass: OwNcLoUd

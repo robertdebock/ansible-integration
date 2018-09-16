@@ -4,7 +4,5 @@
   become: yes
   any_errors_fatal: true
 
-  tasks:
-    - name: postfix
-      include_role:
-        name: robertdebock.postfix
+  roles:
+    - role: robertdebock.postfix
