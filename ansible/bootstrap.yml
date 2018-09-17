@@ -1,6 +1,6 @@
 ---
 - name: configure shared items for all machines.
-  hosts: all
+  hosts: all:!localhost
   become: yes
   gather_facts: no
 
