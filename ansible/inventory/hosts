@@ -1,0 +1,32 @@
+---
+all:
+  hosts:
+    localhost
+  children:
+    receiving_mailservers:
+      hosts:
+        machine1.meinit.nl:
+    outgoing_mailservers:
+      hosts:
+        machine2.meinit.nl:
+    mailserver_clients:
+      hosts:
+        machine3.meinit.nl:
+    rsyslog_servers:
+      hosts:
+        machine4.meinit.nl:
+    rsyslog_clients:
+      hosts:
+        machine5.meinit.nl:
+    application_server:
+      hosts:
+        machine6.meinit.nl:
+    web_server:
+      hosts:
+        machine7.meinit.nl:
+    database_servers:
+      hosts:
+        machine8.meinit.nl:
+    web_servers:
+      hosts:
+        machine9.meinit.nl:

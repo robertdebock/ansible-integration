@@ -1,0 +1,9 @@
+tomcat_layout:
+  - name: sample
+    directory: /opt/sample
+    user: sample
+    group: sample
+    version: 9
+    wars:
+      - url: https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war
+
