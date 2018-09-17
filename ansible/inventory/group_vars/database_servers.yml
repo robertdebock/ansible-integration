@@ -6,8 +6,8 @@ mysql_users:
   - name: phpmyadmin
     password: PhPmYaDmIn
     priv: "*.*:ALL"
-    host: machine9.meinit.nl
+    host: machine9
   - name: owncloud
     password: OwNcLoUd
     priv: "owncloud.*:ALL"
-    host: machine9.meinit.nl
+    host: machine9
