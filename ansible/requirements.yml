@@ -1,10 +1,11 @@
----
+
 - robertdebock.bootstrap
 - robertdebock.buildtools
 - robertdebock.clamav
 - robertdebock.common
-- robertdebock.dovecot
 - robertdebock.docker
+- robertdebock.dovecot
+- robertdebock.digitalocean_agent
 - robertdebock.epel
 - robertdebock.fail2ban
 - robertdebock.firewall
@@ -23,4 +24,4 @@
 - robertdebock.tomcat
 - robertdebock.update
 - robertdebock.users
-
+---
