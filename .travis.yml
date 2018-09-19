@@ -11,7 +11,7 @@ before_install:
   - pip install --upgrade pip
   - pip install ansible
   - ansible-galaxy install --role-file requirements.yml
-  - ansible-playbook --inventory localhost, --connection local before_install.yml --extra-vars "ara_configuration_file=${TRAVIS_BUILD_DIR}/ansible/ansible.cfg"
+  - ansible-playbook --inventory localhost, --connection local playbook.yml --extra-vars "ara_configuration_file=${TRAVIS_BUILD_DIR}/ansible/ansible.cfg"
 
 script:
   - cd terraform

@@ -5,7 +5,7 @@ all:
   children:
     webappservers:
       hosts:
-        machine1.meinit.nl:
+        server1.meinit.nl:
     services:
       hosts:
-        machine2.meinit.nl:
+        server2.meinit.nl:
