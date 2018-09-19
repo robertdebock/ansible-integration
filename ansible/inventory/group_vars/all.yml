@@ -2,9 +2,7 @@
 ansible_user: root
 ansible_ssh_private_key_file: ../terraform/id_rsa
 bootstrap_wait_for_host: yes
-users_group_list:
-  - name: robertdb
-    gid: 1024
+
 users_user_list:
   - name: root
     password: UNSET

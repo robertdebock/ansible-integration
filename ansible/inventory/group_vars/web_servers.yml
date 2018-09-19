@@ -1,9 +1,0 @@
----
-rundeck_url: http://machine9.meinit.nl:4440/
-phpmyadmin_database_host: machine8.meinit.nl
-phpmyadmin_database_user: phpmyadmin
-phpmyadmin_database_pass: PhPmYaDmIn
-owncloud_database_host: machine8.meinit.nl
-owncloud_database_name: owncloud
-owncloud_database_user: owncloud
-owncloud_database_pass: OwNcLoUd

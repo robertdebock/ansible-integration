@@ -1,9 +1,4 @@
 ---
-- src: https://github.com/robertdebock/ansible-role-ara
-  name: robertdebock.ara
-- src: https://github.com/robertdebock/ansible-role-bootstrap
-  name: robertdebock.bootstrap
-#- src: https://github.com/robertdebock/ansible-role-mitogen
-#  name: robertdebock.mitogen
-- src: https://github.com/robertdebock/ansible-role-terraform
-  name: robertdebock.terraform
+- robertdebock.ara
+- robertdebock.bootstrap
+- robertdebock.terraform

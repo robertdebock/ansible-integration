@@ -1,0 +1,26 @@
+---
+- robertdebock.bootstrap
+- robertdebock.buildtools
+- robertdebock.clamav
+- robertdebock.common
+- robertdebock.dovecot
+- robertdebock.docker
+- robertdebock.epel
+- robertdebock.fail2ban
+- robertdebock.firewall
+- robertdebock.haveged
+- robertdebock.httpd
+- robertdebock.java
+- robertdebock.mysql
+- robertdebock.ntp
+- robertdebock.php
+- robertdebock.phpmyadmin
+- robertdebock.postfix
+- robertdebock.python_pip
+- robertdebock.rsyslog
+- robertdebock.scl
+- robertdebock.spamassassin
+- robertdebock.tomcat
+- robertdebock.update
+- robertdebock.users
+

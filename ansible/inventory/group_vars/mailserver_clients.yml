@@ -1,2 +1,0 @@
----
-postfix_relayhost: hostvars['outgoing-mailservers']

@@ -1,8 +1,0 @@
----
-- name: configure shared items for all machines.
-  hosts: machine1.meinit.nl:machine2.meinit.nl:machine3.meinit.nl
-  become: yes
-  any_errors_fatal: true
-
-  roles:
-    - role: robertdebock.postfix

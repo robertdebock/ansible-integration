@@ -1,9 +1,0 @@
----
-- name: configure shared items for all machines.
-  hosts: machine4.meinit.nl:machine5.meinit.nl
-  become: yes
-  any_errors_fatal: true
-
-  roles:
-    - role: robertdebock.rsyslog
-    - role: robertdebock.ntp

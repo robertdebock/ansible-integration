@@ -1,3 +1,0 @@
----
-rsyslog_remote: hostvars['rsyslog_servers']
-

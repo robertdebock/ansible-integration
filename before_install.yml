@@ -7,7 +7,6 @@
   roles:
     - role: robertdebock.bootstrap
       bootstrap_user: root
-
     - role: robertdebock.terraform
 
   tasks:

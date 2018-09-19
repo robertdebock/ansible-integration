@@ -1,5 +1,0 @@
----
-- src: https://github.com/robertdebock/ansible-role-ntp.git
-  name: robertdebock.ntp
-- src: https://github.com/robertdebock/ansible-role-rsyslog.git
-  name: robertdebock.rsyslog

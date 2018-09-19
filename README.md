@@ -16,38 +16,3 @@ The files (for Terraform and Ansible) are split to make them easier to understan
 ## Report
 
 Every integration test saves a [report](https://robertdebock.nl/ansible-integration/report/).
-
-
-# Overview of environments
-
-## Infrastructure
-
-```text
-+--- machine4.meinit.nl ---+    +--- machine5.meinit.nl ---+
-| rsyslog server           | <- | rsyslog client           |
-+--------------------------+    +--------------------------+
-```
-
-
-## Mail
-
-```text
-+--- machine1.meinit.nl ---------+   +--- machine2.meinit.nl ---------+
-| Receiving mailserver           |   | Outgoing mailserver            |
-|   - mydestination: example.com |   |   - mynetworks: 192.168.1.0/24 |
-+--------------------------------+   +--------------------------------+
-                                          ^
-                                          |
-                   +--- machine3.meinit.nl ------------+
-                   | Mailserver client                 |
-                   |   - relayhost: machine2.meinit.nl | 
-                   +-----------------------------------+
-```
-
-## Webapp
-
-```text
-+--- machine6.meinit.nl ---+    +--- machine7.meinit.nl ---+
-| application server       | <- | web server               |
-+--------------------------+    +--------------------------+
-```

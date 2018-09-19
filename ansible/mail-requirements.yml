@@ -1,3 +1,0 @@
----
-- src: https://github.com/robertdebock/ansible-role-postfix.git
-  name: robertdebock.postfix
