@@ -5,41 +5,35 @@
   gather_facts: no
 
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.digitalocean_agent
-    - role: robertdebock.common
-    - role: robertdebock.firewall
-    - role: robertdebock.update
-    - role: robertdebock.ntp
-    - role: robertdebock.epel
-    - role: robertdebock.fail2ban
-    - role: robertdebock.postfix
-    - role: robertdebock.rsyslog
-    - role: robertdebock.users
+    - robertdebock.bootstrap
+    - robertdebock.digitalocean_agent
+    - robertdebock.common
+    - robertdebock.firewall
+    - robertdebock.update
+    - robertdebock.ntp
+    - robertdebock.epel
+    - robertdebock.fail2ban
+    - robertdebock.postfix
+    - robertdebock.rsyslog
+    - robertdebock.users
 
 - hosts: services
   become: yes
   gather_facts: no
 
-  vars_files:
-    - vars/vault.yml
-
   roles:
-    - role: robertdebock.spamassassin
-    - role: robertdebock.clamav
-    - role: robertdebock.dovecot
+    - robertdebock.spamassassin
+    - robertdebock.clamav
+    - robertdebock.dovecot
 
 - hosts: webappservers
   become: yes
   gather_facts: no
 
-  vars_files:
-    - vars/vault.yml
-
   roles:
-    - role: robertdebock.mysql
-    - role: robertdebock.python_pip
-    - role: robertdebock.httpd
-    - role: robertdebock.phpmyadmin
-    - role: robertdebock.java
-    - role: robertdebock.tomcat
+    - robertdebock.mysql
+    - robertdebock.python_pip
+    - robertdebock.httpd
+    - robertdebock.phpmyadmin
+    - robertdebock.java
+    - robertdebock.tomcat
