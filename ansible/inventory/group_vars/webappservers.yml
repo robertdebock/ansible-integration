@@ -4,8 +4,8 @@ firewall_services:
   - name: http
   - name: https
 
-postfix_relayhost: "[{{ hostvars['server2']['ansible_default_ipv4']['address'] }}]"
-rsyslog_remote: "{{ hostvars['server2']['ansible_default_ipv4']['address'] }}"
+postfix_relayhost: "[{{ hostvars['server2.meinit.nl']['ansible_default_ipv4']['address'] }}]"
+rsyslog_remote: "{{ hostvars['server2.meinit.nl']['ansible_default_ipv4']['address'] }}"
 
 mysql_bind_address: 0.0.0.0
 
