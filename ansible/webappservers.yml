@@ -1,0 +1,12 @@
+---
+- hosts: webappservers
+  become: yes
+  gather_facts: no
+
+  roles:
+    - robertdebock.mysql
+    - robertdebock.python_pip
+    - robertdebock.httpd
+    - robertdebock.phpmyadmin
+    - robertdebock.java
+    - robertdebock.tomcat
