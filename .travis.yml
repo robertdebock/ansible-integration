@@ -37,3 +37,8 @@ deploy:
 after_script:
   - cd ../terraform
   - terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cf_email}" -var="cloudflare_token=${cf_token}"
+
+notifications:
+  slack:
+    secure: "n0qx0GXoYunCE4j7DovLax5pcfX/A5qENOBvpkmRpDP1VuwiVK2Xol5c471HPhbZq6WSiR8idIcGm2B6t/shY6c14I+hdh8n48zcRNUQl9BnejlRvm0rI07WhMfYfMDe8+JCoYCHmfVz6u6nvydefePfkHFRRbVe4EnsQ3H8ZH5w3WqGLHEPyptctJCn3ICws0wL6Z+VZl1ngrzEg22kl8U16HJ+B4U/Q/1xfHKUVl+/YvdvLdAVK5J83veAwfeNTLPtj3sajvb69U0/yS1kImnOSd+nbnn66I3vKYJfys2ULmi8AIVF0w8XkKHfz+9nBeWwWtHiupcJvGAzbvenGbdHNZL0NPhAd7FqRxukgs7/JE9rVT56ua9PiTb4S9Zgxe3qbEyBTCvdqf1AqH905BZf4RKsrUQ+v1x+0Gq2Y+TXy/KqjEqLAvhHt/JvZm8B337zMOWhuMF8r45dnsvv+Ys6wFnx7+KG/6xGsxV/Pq7DDFiMaBmdlw21RE6JbVDxqmdrAu+prasFFWyJccqRhrnOd6u9vvp1udYyeTrvRHW/2HLqhN+5HaBiZ4SFdH7Cj0lY5dPnSdIuRVLCHwEdpZw+9hlU8KRD7qS0sNT/03AMtR8For8XgFltU4A55iv9nkunFqHk6joxijvcU0mWVn5UDM+UsODMCimCln4dD5M="
+  email: false
