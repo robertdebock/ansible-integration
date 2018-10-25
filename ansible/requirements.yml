@@ -18,6 +18,7 @@
 - robertdebock.phpmyadmin
 - robertdebock.postfix
 - robertdebock.python_pip
+- robertdebock.reboot
 - robertdebock.rsyslog
 - robertdebock.scl
 - robertdebock.spamassassin
