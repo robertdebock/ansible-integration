@@ -20,6 +20,7 @@ script:
   - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cf_email}" -var="cloudflare_token=${cf_token}"
   - cd ../ansible
   - ansible-galaxy install --role-file requirements.yml
+  - sleep 60
   - ansible-playbook --inventory inventory site.yml
   - ara generate html ../ansible-integration
 
