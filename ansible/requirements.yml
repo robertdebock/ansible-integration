@@ -21,6 +21,7 @@
 - robertdebock.reboot
 - robertdebock.rsyslog
 - robertdebock.scl
+- robertdebock.service
 - robertdebock.spamassassin
 - robertdebock.tomcat
 - robertdebock.update
