@@ -8,6 +8,7 @@
     - role: robertdebock.bootstrap
       bootstrap_user: root
     - role: robertdebock.terraform
+    - role: robertdebock.ara
 
   tasks:
     - name: configure ansible (host_key_checking)
@@ -16,9 +17,3 @@
         section: defaults
         option: host_key_checking
         value: False
-
-- name: before install as user
-  hosts: localhost
-
-  roles:
-    - role: robertdebock.ara
