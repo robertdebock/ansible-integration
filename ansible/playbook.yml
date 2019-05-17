@@ -1,4 +1,4 @@
 ---
-- import_playbook: common.yml
+- import_playbook: shared.yml
 - import_playbook: services.yml
 - import_playbook: webappservers.yml
