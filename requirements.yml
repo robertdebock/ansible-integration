@@ -4,5 +4,7 @@
 - robertdebock.buildtools
 - robertdebock.epel
 - robertdebock.python_pip
+- robertdebock.reboot
 - robertdebock.service
 - robertdebock.terraform
+- robertdebock.update
