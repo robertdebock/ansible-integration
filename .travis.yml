@@ -10,7 +10,7 @@ cache:
 
 install:
   - pip install -r requirements.txt
-  - curl -o /usr/local/bin/terraform https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip ; chmod 750 /usr/local/bin/terraform
+  - curl -o /usr/bin/terraform https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip ; chmod 750 /usr/bin/terraform
 
 script:
   - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ara-manage runserver &
