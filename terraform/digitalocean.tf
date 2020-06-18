@@ -38,9 +38,9 @@ resource "digitalocean_record" "server1" {
   value = digitalocean_droplet.server1.ipv4_address
 }
 
-resource "digitalocean_record" "server1" {
+resource "digitalocean_record" "server2" {
   domain = digitalocean_domain.default.name
   type = "A"
-  name = "server1"
-  value = digitalocean_droplet.server1.ipv4_address
+  name = "server2"
+  value = digitalocean_droplet.server2.ipv4_address
 }
