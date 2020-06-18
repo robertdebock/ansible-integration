@@ -3,13 +3,13 @@ resource "digitalocean_droplet" "server1" {
   name     = "server1.meinit.nl"
   region   = "ams3"
   size     = "2gb"
-  ssh_keys = ["${digitalocean_ssh_key.default.id}"]
+  ssh_keys = ["digitalocean_ssh_key.default.id"]
 }
 
 resource "cloudflare_record" "server1" {
   domain = "meinit.nl"
   name   = "server1"
-  value  = "${digitalocean_droplet.server1.ipv4_address}"
+  value  = "digitalocean_droplet.server1.ipv4_address"
   type   = "A"
   ttl    = 300
 }
@@ -19,13 +19,13 @@ resource "digitalocean_droplet" "server2" {
   name     = "server2.meinit.nl"
   region   = "ams3"
   size     = "4gb"
-  ssh_keys = ["${digitalocean_ssh_key.default.id}"]
+  ssh_keys = ["digitalocean_ssh_key.default.id"]
 }
 
 resource "cloudflare_record" "server2" {
   domain = "meinit.nl"
   name   = "server2"
-  value  = "${digitalocean_droplet.server2.ipv4_address}"
+  value  = "digitalocean_droplet.server2.ipv4_address"
   type   = "A"
   ttl    = 300
 }
