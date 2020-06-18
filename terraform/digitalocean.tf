@@ -25,7 +25,7 @@ resource "digitalocean_droplet" "server1" {
   ssh_keys = [digitalocean_ssh_key.default.id]
 }
 
-data "cloudflare_zones" "meinit.l" {
+data "cloudflare_zones" "meinitnl" {
   filter {
     name   = "meinit.nl"
   }
