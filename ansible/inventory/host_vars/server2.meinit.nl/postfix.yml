@@ -1,5 +1,0 @@
----
-postfix_inet_inferfaces: all
-postfix_mydestination: meinit.nl
-postfix_spamassassin: enabled
-postfix_clamav: enabled

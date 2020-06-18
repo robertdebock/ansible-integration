@@ -1,0 +1,2 @@
+---
+rsyslog_remote: "{{ hostvars[groups['server2.meinit.nl']]['ansible_default_ipv4']['address'] }}"

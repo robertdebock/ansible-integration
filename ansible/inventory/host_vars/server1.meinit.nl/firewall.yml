@@ -1,5 +1,0 @@
----
-firewall_services:
-  - name: ssh
-  - name: http
-  - name: https

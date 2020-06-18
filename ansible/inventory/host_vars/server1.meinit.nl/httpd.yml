@@ -1,5 +1,0 @@
----
-httpd_applications:
-  - name: example
-    location: /example/
-    backend_url: "http://localhost:8080/example/"
