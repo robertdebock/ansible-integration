@@ -1,25 +1,25 @@
 ---
 language: python
-python: 2.7
+python:
+  - 3.8
 
 sudo: required
 
 cache:
   - pip
 
-before_install:
-  - pip install ansible
-  - pip install ara[server]
-  - ANSIBLE_CALLBACK_PLUGINS="$(python -m ara.setup.callback_plugins)" ara-manage runserver
+install:
+  - pip install -r requirements.txt
 
 script:
+  - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ara-manage runserver
   - cd terraform
   - ssh-keygen -f id_rsa -N ""
   - terraform init
   - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cf_email}" -var="cloudflare_token=${cf_token}"
   - cd ../ansible
   - ansible-galaxy install --role-file requirements.yml
-  - ANSIBLE_CALLBACK_PLUGINS="$(python -m ara.setup.callback_plugins)" ansible-playbook --inventory inventory playbook.yml
+  - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ansible-playbook --inventory inventory playbook.yml
   - ara generate html ../ansible-integration
 
 deploy:
