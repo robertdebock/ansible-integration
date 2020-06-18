@@ -3,6 +3,7 @@
 - robertdebock.buildtools
 - robertdebock.clamav
 - robertdebock.common
+- robertdebock.cron
 - robertdebock.docker
 - robertdebock.dovecot
 - robertdebock.digitalocean_agent

@@ -10,6 +10,7 @@
     - robertdebock.common
     - robertdebock.firewall
     - robertdebock.update
+    - robertdebock.cron
     - robertdebock.ntp
     - robertdebock.epel
     - robertdebock.fail2ban
