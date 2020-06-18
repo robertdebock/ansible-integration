@@ -19,7 +19,7 @@ script:
   - cd terraform
   - ssh-keygen -f id_rsa -N ""
   - terraform init
-  - terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cf_email}" -var="cloudflare_token=${cf_token}"
+  - terraform apply -auto-approve
   - cd ../ansible
   - ansible-galaxy install --role-file requirements.yml
   - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ansible-playbook --inventory inventory playbook.yml
