@@ -25,8 +25,14 @@ resource "digitalocean_droplet" "server1" {
   ssh_keys = [digitalocean_ssh_key.default.id]
 }
 
+data "cloudflare_zones" "meinit.l" {
+  filter {
+    name   = "meinit.nl"
+  }
+}
+
 resource "cloudflare_record" "server1" {
-  zone_id = "a6447ff55ceef70d8c36ee0f22799711"
+  zone_id = "cloudflare_zones.meinitnl.zones[0].id"
   name    = "server1"
   value   = digitalocean_droplet.server1.ipv4_address
   type    = "A"
@@ -42,7 +48,7 @@ resource "digitalocean_droplet" "server2" {
 }
 
 resource "cloudflare_record" "server2" {
-  zone_id = "a6447ff55ceef70d8c36ee0f22799711"
+  zone_id = "cloudflare_zones.meinitnl.zones[0].id"
   name    = "server2"
   value   = digitalocean_droplet.server2.ipv4_address
   type    = "A"
