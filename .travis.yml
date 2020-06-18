@@ -12,7 +12,7 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ara-manage runserver
+  - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ara-manage runserver &
   - cd terraform
   - ssh-keygen -f id_rsa -N ""
   - terraform init
