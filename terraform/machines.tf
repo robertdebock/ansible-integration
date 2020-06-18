@@ -1,3 +1,7 @@
+resource "digitalocean_domain" "default" {
+  name = "meinit.nl"
+}
+
 resource "digitalocean_droplet" "server1" {
   image    = "centos-7-x64"
   name     = "server1.meinit.nl"
@@ -7,7 +11,7 @@ resource "digitalocean_droplet" "server1" {
 }
 
 resource "cloudflare_record" "server1" {
-  domain = "meinit.nl"
+  domain = digitalocean_domain.default.name
   name   = "server1"
   value  = "digitalocean_droplet.server1.ipv4_address"
   type   = "A"
@@ -23,7 +27,7 @@ resource "digitalocean_droplet" "server2" {
 }
 
 resource "cloudflare_record" "server2" {
-  domain = "meinit.nl"
+  domain = digitalocean_domain.default.name
   name   = "server2"
   value  = "digitalocean_droplet.server2.ipv4_address"
   type   = "A"
