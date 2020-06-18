@@ -16,6 +16,7 @@ resource "digitalocean_ssh_key" "default" {
   name       = "integration"
   public_key = file("id_rsa.pub")
 }
+
 resource "digitalocean_droplet" "server1" {
   image    = "centos-7-x64"
   name     = "server1.meinit.nl"
@@ -25,7 +26,7 @@ resource "digitalocean_droplet" "server1" {
 }
 
 resource "cloudflare_record" "server1" {
-  zone_id = "meinit.nl"
+  zone_id = "a6447ff55ceef70d8c36ee0f22799711"
   name    = "server1"
   value   = digitalocean_droplet.server1.ipv4_address
   type    = "A"
@@ -41,7 +42,7 @@ resource "digitalocean_droplet" "server2" {
 }
 
 resource "cloudflare_record" "server2" {
-  zone_id = "meinit.nl"
+  zone_id = "a6447ff55ceef70d8c36ee0f22799711"
   name    = "server2"
   value   = digitalocean_droplet.server2.ipv4_address
   type    = "A"
