@@ -1,5 +1,4 @@
 variable "do_token" {}
-variable "cf_token" {}
 
 provider "digitalocean" {
   version = "~> 1.20"
