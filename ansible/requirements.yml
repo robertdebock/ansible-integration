@@ -11,6 +11,7 @@
 - robertdebock.fail2ban
 - robertdebock.firewall
 - robertdebock.haveged
+- robertdebock.hostname
 - robertdebock.httpd
 - robertdebock.java
 - robertdebock.mysql
