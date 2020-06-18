@@ -1,0 +1,8 @@
+---
+tomcat_instances:
+  - name: example
+    directory: /opt/example
+    non_ssl_connector_port: 8080
+    ssl_connector_port: 8443
+    shutdown_port: 8005
+    ajp_port: 8009
