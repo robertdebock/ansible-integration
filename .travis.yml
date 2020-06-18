@@ -8,9 +8,9 @@ cache:
   - pip
 
 before_install:
-  - pip install --upgrade pip
-  - pip install ansible
-  - pip install ara[server]
+  - pip3 install --upgrade pip
+  - pip3 install ansible
+  - pip3 install ara[server]
   - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ara-manage runserver
 
 script:
