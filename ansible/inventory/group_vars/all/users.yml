@@ -1,6 +1,4 @@
 ---
-bootstrap_wait_for_host: yes
-
 users_user_list:
   - name: root
     password: UNSET

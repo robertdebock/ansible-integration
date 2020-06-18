@@ -22,8 +22,6 @@ script:
   - terraform apply -auto-approve
   - cd ../ansible
   - ansible-galaxy install --role-file requirements.yml
-  - echo "ns1.digitalocean.com" | sudo tee /etc/resolv.conf
-  - echo "ns2.digitalocean.com" | sudo tee -a /etc/resolv.conf
   - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ansible-playbook --inventory inventory playbook.yml
   - ara generate html ../ansible-integration
 

@@ -1,0 +1,9 @@
+---
+firewall_services:
+  - name: http
+  - name: pop3
+  - name: imap
+  - name: smtp
+  - name: ssh
+  - name: 514
+    protocol: udp
