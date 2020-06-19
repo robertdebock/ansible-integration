@@ -23,7 +23,7 @@ script:
   - cd ../ansible
   - ansible-galaxy install --role-file requirements.yml
   - ANSIBLE_CALLBACK_PLUGINS="$(python3 -m ara.setup.callback_plugins)" ansible-playbook --inventory inventory playbook.yml
-  - ara generate html ../ansible-integration
+  - ara-manage generate ../ansible-integration
 
 deploy:
   - provider: pages
