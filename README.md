@@ -1,6 +1,6 @@
 # Interation tests
 
-[![Build Status](https://travis-ci.org/robertdebock/ansible-integration.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-integration)
+[![Build Status](https://travis-ci.com/robertdebock/ansible-integration.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-integration)
 
 This setup runs many scenarios which include many roles and can be used to:
 - Test Ansible roles.
