@@ -15,4 +15,4 @@ The files (for Terraform and Ansible) are split to make them easier to understan
 
 ## Report
 
-Every integration test saves a [report](https://robertdebock.nl/ansible-integration/report/).
+Every integration test saves a [report](https://robertdebock.nl/ansible-integration/).
