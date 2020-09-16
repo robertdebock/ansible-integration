@@ -1,5 +1,5 @@
 ---
-- hosts: services
+- hosts: server1.meinit.nl
   become: yes
   gather_facts: no
 
