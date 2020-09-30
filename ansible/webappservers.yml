@@ -6,6 +6,7 @@
   roles:
     - robertdebock.mysql
     - robertdebock.python_pip
+    - robertdebock.openssl
     - robertdebock.httpd
     - robertdebock.phpmyadmin
     - robertdebock.java
