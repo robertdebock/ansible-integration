@@ -4,11 +4,11 @@
   gather_facts: no
 
   roles:
-    - robertdebock.mysql
-    - robertdebock.buildtools
-    - robertdebock.python_pip
-    - robertdebock.openssl
-    - robertdebock.httpd
-    - robertdebock.phpmyadmin
-    - robertdebock.java
-    - robertdebock.tomcat
+    - role: robertdebock.mysql
+    - role: robertdebock.buildtools
+    - role: robertdebock.python_pip
+    - role: robertdebock.openssl
+    - role: robertdebock.httpd
+    - role: robertdebock.phpmyadmin
+    - role: robertdebock.java
+    - role: robertdebock.tomcat

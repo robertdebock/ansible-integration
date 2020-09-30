@@ -4,6 +4,6 @@
   gather_facts: no
 
   roles:
-    - robertdebock.spamassassin
-    - robertdebock.clamav
-    - robertdebock.dovecot
+    - role: robertdebock.spamassassin
+    - role: robertdebock.clamav
+    - role: robertdebock.dovecot

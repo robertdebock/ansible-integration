@@ -5,16 +5,16 @@
   gather_facts: no
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.digitalocean_agent
-    - robertdebock.common
-    - robertdebock.firewall
-    - robertdebock.update
-    - robertdebock.cron
-    - robertdebock.ntp
-    - robertdebock.epel
-    - robertdebock.fail2ban
-    - robertdebock.hostname
-    - robertdebock.postfix
-    - robertdebock.rsyslog
-    - robertdebock.users
+    - role: robertdebock.bootstrap
+    - role: robertdebock.digitalocean_agent
+    - role: robertdebock.common
+    - role: robertdebock.firewall
+    - role: robertdebock.update
+    - role: robertdebock.cron
+    - role: robertdebock.ntp
+    - role: robertdebock.epel
+    - role: robertdebock.fail2ban
+    - role: robertdebock.hostname
+    - role: robertdebock.postfix
+    - role: robertdebock.rsyslog
+    - role: robertdebock.users
