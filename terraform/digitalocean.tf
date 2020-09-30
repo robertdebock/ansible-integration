@@ -26,19 +26,19 @@ resource "digitalocean_droplet" "server2" {
   ssh_keys = [digitalocean_ssh_key.default.id]
 }
 
-resource "digitalocean_domain" "default" {
+data "digitalocean_domain" "default" {
    name = "meinit.nl"
 }
 
 resource "digitalocean_record" "server1" {
-  domain = digitalocean_domain.default.name
+  domain = data.digitalocean_domain.default.name
   type = "A"
   name = "server1"
   value = digitalocean_droplet.server1.ipv4_address
 }
 
 resource "digitalocean_record" "server2" {
-  domain = digitalocean_domain.default.name
+  domain = data.digitalocean_domain.default.name
   type = "A"
   name = "server2"
   value = digitalocean_droplet.server2.ipv4_address
