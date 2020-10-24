@@ -1,6 +1,6 @@
 ---
 - name: configure shared items for all machines.
-  hosts: all:!localhost
+  hosts: server1.meinit.nl:server2.meinit.nl
   become: yes
   gather_facts: no
 
