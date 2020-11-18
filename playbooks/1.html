@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en" class="layout-pf">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../static/css/patternfly.min.css">
+    <link rel="stylesheet" href="../static/css/ara.css">
+    
+    <link rel="shortcut icon" href="../static/images/favicon.ico">
+    
+    
+</head>
+
+<body>
+    <div class="pf-c-page">
+        <header role="banner" class="pf-c-page__header">
+            <div class="pf-c-page__header-brand">
+                <a class="pf-c-page__header-brand-link" href="../">
+                    <img class="pf-c-brand" src="../static/images/logo.svg" alt="ARA Records Ansible">
+                </a>
+            </div>
+            <div class="pf-c-page__header-nav">
+                <nav class="pf-c-nav" aria-label="Global">
+                    <button class="pf-c-nav__scroll-button" aria-label="Scroll left">
+                        <i class="fas fa-angle-left" aria-hidden="true"></i>
+                    </button>
+                    <ul class="pf-c-nav__horizontal-list">
+                        <li class="pf-c-nav__item">
+                            
+                            <a href="../" class="pf-c-nav__link">Playbooks</a>
+                            
+                        </li>
+                        
+
+
+                        <li class="pf-c-nav__item">
+                            <a href="https://ara.readthedocs.io" class="pf-c-nav__link" target="_blank">Docs</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main role="main" class="pf-c-page__main">
+            <section class="pf-c-page__main-section pf-m-light">
+                
+
+
+
+<div class="pf-c-card pf-m-hoverable pf-c-alert pf-m-success pf-m-inline">
+
+    <ul class="pf-c-data-list" role="list">
+        <li class="pf-c-data-list__item">
+            <div class="pf-c-data-list__item-row">
+                <div class="pf-c-data-list__item-control pf-m-fit-content">
+                    
+<div class="pf-c-alert__icon" title="Playbook completed successfully">
+    <i class="fas fa-check-circle" aria-hidden="true"></i>
+</div>
+
+                </div>
+                <div class="pf-c-data-list__item-content">
+                    <div class="pf-c-data-list__cell pf-m-fit-content">
+                        <div style="padding-top:1em; white-space:nowrap;">
+                            <span title="Date at which the playbook started">
+                                <i class="fas fa-play-circle" aria-hidden="true"></i> 18 Nov 2020 13:02:29 +0000
+                            </span><br>
+                            <span title="Date at which the playbook ended">
+                                <i class="fas fa-stop-circle" aria-hidden="true" title="Date at which the playbook ended"></i> 18 Nov 2020 13:02:29 +0000
+                            </span>
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-fit-content">
+                        <div style="padding-top:1em; white-space:nowrap;" title="Duration of the playbook">
+                            <i class="fas fa-stopwatch" aria-hidden="true"></i> 00:00:00.24
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-fit-content">
+                        <div style="padding-top:1em; white-space:nowrap;" title="Ansible version">
+                            Ansible 2.10.3
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-flex-5">
+                        <div style="padding-top:1em;" title="/home/travis/build/robertdebock/ansible-integration/ansible/playbook.yml">
+                            <a href="../playbooks/1.html">
+                                ...ansible-integration/ansible/playbook.yml
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-flex-1">
+                        <div style="padding-top:1em;">
+                            <a href="../playbooks/1.html#hosts">0 hosts</a>
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-flex-1">
+                        <div style="padding-top:1em;">
+                            <a href="../playbooks/1.html#plays">3 plays</a>
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-flex-1">
+                        <div style="padding-top:1em;">
+                            <a href="../playbooks/1.html#results">0 Tasks</a>
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-flex-1">
+                        <div style="padding-top:1em;">
+                            <a href="../playbooks/1.html#results">0 results</a>
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-flex-1">
+                        <div style="padding-top:1em;">
+                            <a href="../playbooks/1.html#files">113 files</a>
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-flex-1">
+                        <div style="padding-top:1em;">
+                            <a href="../playbooks/1.html#records">0 records</a>
+                        </div>
+                    </div>
+                    <div class="pf-c-data-list__cell pf-m-flex-1">
+                        <details id="cli-arguments-details">
+                            <summary><a>CLI arguments</a></summary>
+                            <table class="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="cli-arguments" id="cli-arguments">
+                                <thead>
+                                    <tr role="row">
+                                        <th role="columnheader" scope="col">Argument</th>
+                                        <th role="columnheader" scope="col">Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody role="rowgroup">
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">version</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">verbosity</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">0</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">ask_pass</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">private_key_file</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">remote_user</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">connection</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">smart</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">timeout</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">10</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">ssh_common_args</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content"></td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">sftp_extra_args</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content"></td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">scp_extra_args</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content"></td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">ssh_extra_args</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content"></td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">force_handlers</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">flush_cache</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">become</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">become_method</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">sudo</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">become_user</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">become_ask_pass</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">tags</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">[&#39;all&#39;]</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">skip_tags</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">[]</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">check</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">syntax</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">diff</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">inventory</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">[&#39;/home/travis/build/robertdebock/ansible-integration/ansible/inventory&#39;]</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">listhosts</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">subset</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">extra_vars</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">Not saved by ARA as configured by &#39;ignored_arguments&#39;</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">vault_ids</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">[]</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">ask_vault_pass</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">vault_password_files</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">[]</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">forks</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">5</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">module_path</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">listtasks</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">listtags</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">step</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">start_at_task</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                    </tr>
+                                    
+                                    <tr role="row">
+                                        <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">args</td>
+                                        <td role="cell" data-label="Value" class="pf-m-fit-content">[&#39;playbook.yml&#39;]</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </details>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pf-c-data-list__item-row">
+                <ul class="pf-c-chip-group pf-m-toolbar">
+                    <li>
+                        <h4 class="pf-c-chip-group__label">Playbook labels</h4>
+                        <ul class="pf-c-chip-group">
+                            
+                            <li class="pf-c-chip" title="check:False">
+                                <span class="pf-c-chip__text">check:False</span>
+                                
+                                
+                                <a class="pf-c-button pf-m-plain" type="button" aria-label="Search for this label" disabled>
+                                
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            
+                            <li class="pf-c-chip" title="tags:all">
+                                <span class="pf-c-chip__text">tags:all</span>
+                                
+                                
+                                <a class="pf-c-button pf-m-plain" type="button" aria-label="Search for this label" disabled>
+                                
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </li>
+    </ul>
+</div>
+
+
+
+<div class="pf-c-card" style="margin: 1em 0;">
+    <div class="pf-c-card__body">
+        <details id="records">
+            <summary>Records</summary>
+            
+            No records have been saved with <a href="https://ara.readthedocs.io/en/latest/ara-record.html" target="_blank">ara_record</a> for this playbook.
+            
+        </details>
+        <details id="files">
+            <summary>Files</summary>
+            <ul class="pf-c-list">
+                
+                <li><a href="../files/1.html">/home/travis/build/robertdebock/ansible-integration/ansible/playbook.yml</a></li>
+                
+                <li><a href="../files/2.html">/home/travis/build/robertdebock/ansible-integration/ansible/shared.yml</a></li>
+                
+                <li><a href="../files/3.html">/home/travis/.ansible/roles/robertdebock.bootstrap/vars/main.yml</a></li>
+                
+                <li><a href="../files/4.html">/home/travis/.ansible/roles/robertdebock.bootstrap/defaults/main.yml</a></li>
+                
+                <li><a href="../files/5.html">/home/travis/.ansible/roles/robertdebock.bootstrap/meta/main.yml</a></li>
+                
+                <li><a href="../files/6.html">/home/travis/.ansible/roles/robertdebock.bootstrap/tasks/main.yml</a></li>
+                
+                <li><a href="../files/7.html">/home/travis/.ansible/roles/robertdebock.digitalocean_agent/vars/main.yml</a></li>
+                
+                <li><a href="../files/8.html">/home/travis/.ansible/roles/robertdebock.digitalocean_agent/meta/main.yml</a></li>
+                
+                <li><a href="../files/9.html">/home/travis/.ansible/roles/robertdebock.digitalocean_agent/tasks/main.yml</a></li>
+                
+                <li><a href="../files/10.html">/home/travis/.ansible/roles/robertdebock.digitalocean_agent/handlers/main.yml</a></li>
+                
+                <li><a href="../files/11.html">/home/travis/.ansible/roles/robertdebock.common/vars/main.yml</a></li>
+                
+                <li><a href="../files/12.html">/home/travis/.ansible/roles/robertdebock.common/defaults/main.yml</a></li>
+                
+                <li><a href="../files/13.html">/home/travis/.ansible/roles/robertdebock.common/meta/main.yml</a></li>
+                
+                <li><a href="../files/14.html">/home/travis/.ansible/roles/robertdebock.common/tasks/main.yml</a></li>
+                
+                <li><a href="../files/15.html">/home/travis/.ansible/roles/robertdebock.common/handlers/main.yml</a></li>
+                
+                <li><a href="../files/16.html">/home/travis/.ansible/roles/robertdebock.firewall/vars/main.yml</a></li>
+                
+                <li><a href="../files/17.html">/home/travis/.ansible/roles/robertdebock.firewall/defaults/main.yml</a></li>
+                
+                <li><a href="../files/18.html">/home/travis/.ansible/roles/robertdebock.firewall/meta/main.yml</a></li>
+                
+                <li><a href="../files/19.html">/home/travis/.ansible/roles/robertdebock.firewall/tasks/main.yml</a></li>
+                
+                <li><a href="../files/20.html">/home/travis/.ansible/roles/robertdebock.firewall/handlers/main.yml</a></li>
+                
+                <li><a href="../files/21.html">/home/travis/.ansible/roles/robertdebock.update/defaults/main.yml</a></li>
+                
+                <li><a href="../files/22.html">/home/travis/.ansible/roles/robertdebock.update/meta/main.yml</a></li>
+                
+                <li><a href="../files/23.html">/home/travis/.ansible/roles/robertdebock.update/tasks/main.yml</a></li>
+                
+                <li><a href="../files/24.html">/home/travis/.ansible/roles/robertdebock.update/handlers/main.yml</a></li>
+                
+                <li><a href="../files/25.html">/home/travis/.ansible/roles/robertdebock.cron/vars/main.yml</a></li>
+                
+                <li><a href="../files/26.html">/home/travis/.ansible/roles/robertdebock.cron/defaults/main.yml</a></li>
+                
+                <li><a href="../files/27.html">/home/travis/.ansible/roles/robertdebock.cron/meta/main.yml</a></li>
+                
+                <li><a href="../files/28.html">/home/travis/.ansible/roles/robertdebock.cron/tasks/main.yml</a></li>
+                
+                <li><a href="../files/29.html">/home/travis/.ansible/roles/robertdebock.cron/handlers/main.yml</a></li>
+                
+                <li><a href="../files/30.html">/home/travis/.ansible/roles/robertdebock.ntp/vars/main.yml</a></li>
+                
+                <li><a href="../files/31.html">/home/travis/.ansible/roles/robertdebock.ntp/defaults/main.yml</a></li>
+                
+                <li><a href="../files/32.html">/home/travis/.ansible/roles/robertdebock.ntp/meta/main.yml</a></li>
+                
+                <li><a href="../files/33.html">/home/travis/.ansible/roles/robertdebock.ntp/tasks/main.yml</a></li>
+                
+                <li><a href="../files/34.html">/home/travis/.ansible/roles/robertdebock.ntp/handlers/main.yml</a></li>
+                
+                <li><a href="../files/35.html">/home/travis/.ansible/roles/robertdebock.epel/vars/main.yml</a></li>
+                
+                <li><a href="../files/36.html">/home/travis/.ansible/roles/robertdebock.epel/meta/main.yml</a></li>
+                
+                <li><a href="../files/37.html">/home/travis/.ansible/roles/robertdebock.epel/tasks/main.yml</a></li>
+                
+                <li><a href="../files/38.html">/home/travis/.ansible/roles/robertdebock.epel/handlers/main.yml</a></li>
+                
+                <li><a href="../files/39.html">/home/travis/.ansible/roles/robertdebock.fail2ban/vars/main.yml</a></li>
+                
+                <li><a href="../files/40.html">/home/travis/.ansible/roles/robertdebock.fail2ban/defaults/main.yml</a></li>
+                
+                <li><a href="../files/41.html">/home/travis/.ansible/roles/robertdebock.fail2ban/meta/main.yml</a></li>
+                
+                <li><a href="../files/42.html">/home/travis/.ansible/roles/robertdebock.fail2ban/tasks/main.yml</a></li>
+                
+                <li><a href="../files/43.html">/home/travis/.ansible/roles/robertdebock.fail2ban/handlers/main.yml</a></li>
+                
+                <li><a href="../files/44.html">/home/travis/.ansible/roles/robertdebock.hostname/vars/main.yml</a></li>
+                
+                <li><a href="../files/45.html">/home/travis/.ansible/roles/robertdebock.hostname/defaults/main.yml</a></li>
+                
+                <li><a href="../files/46.html">/home/travis/.ansible/roles/robertdebock.hostname/meta/main.yml</a></li>
+                
+                <li><a href="../files/47.html">/home/travis/.ansible/roles/robertdebock.hostname/tasks/main.yml</a></li>
+                
+                <li><a href="../files/48.html">/home/travis/.ansible/roles/robertdebock.hostname/handlers/main.yml</a></li>
+                
+                <li><a href="../files/49.html">/home/travis/.ansible/roles/robertdebock.postfix/vars/main.yml</a></li>
+                
+                <li><a href="../files/50.html">/home/travis/.ansible/roles/robertdebock.postfix/defaults/main.yml</a></li>
+                
+                <li><a href="../files/51.html">/home/travis/.ansible/roles/robertdebock.postfix/meta/main.yml</a></li>
+                
+                <li><a href="../files/52.html">/home/travis/.ansible/roles/robertdebock.postfix/tasks/main.yml</a></li>
+                
+                <li><a href="../files/53.html">/home/travis/.ansible/roles/robertdebock.postfix/handlers/main.yml</a></li>
+                
+                <li><a href="../files/54.html">/home/travis/.ansible/roles/robertdebock.rsyslog/vars/main.yml</a></li>
+                
+                <li><a href="../files/55.html">/home/travis/.ansible/roles/robertdebock.rsyslog/defaults/main.yml</a></li>
+                
+                <li><a href="../files/56.html">/home/travis/.ansible/roles/robertdebock.rsyslog/meta/main.yml</a></li>
+                
+                <li><a href="../files/57.html">/home/travis/.ansible/roles/robertdebock.rsyslog/tasks/main.yml</a></li>
+                
+                <li><a href="../files/58.html">/home/travis/.ansible/roles/robertdebock.rsyslog/handlers/main.yml</a></li>
+                
+                <li><a href="../files/59.html">/home/travis/.ansible/roles/robertdebock.users/vars/main.yml</a></li>
+                
+                <li><a href="../files/60.html">/home/travis/.ansible/roles/robertdebock.users/defaults/main.yml</a></li>
+                
+                <li><a href="../files/61.html">/home/travis/.ansible/roles/robertdebock.users/meta/main.yml</a></li>
+                
+                <li><a href="../files/62.html">/home/travis/.ansible/roles/robertdebock.users/tasks/main.yml</a></li>
+                
+                <li><a href="../files/63.html">/home/travis/build/robertdebock/ansible-integration/ansible/services.yml</a></li>
+                
+                <li><a href="../files/64.html">/home/travis/.ansible/roles/robertdebock.spamassassin/vars/main.yml</a></li>
+                
+                <li><a href="../files/65.html">/home/travis/.ansible/roles/robertdebock.spamassassin/defaults/main.yml</a></li>
+                
+                <li><a href="../files/66.html">/home/travis/.ansible/roles/robertdebock.spamassassin/meta/main.yml</a></li>
+                
+                <li><a href="../files/67.html">/home/travis/.ansible/roles/robertdebock.spamassassin/tasks/main.yml</a></li>
+                
+                <li><a href="../files/68.html">/home/travis/.ansible/roles/robertdebock.spamassassin/handlers/main.yml</a></li>
+                
+                <li><a href="../files/69.html">/home/travis/.ansible/roles/robertdebock.clamav/vars/main.yml</a></li>
+                
+                <li><a href="../files/70.html">/home/travis/.ansible/roles/robertdebock.clamav/defaults/main.yml</a></li>
+                
+                <li><a href="../files/71.html">/home/travis/.ansible/roles/robertdebock.clamav/meta/main.yml</a></li>
+                
+                <li><a href="../files/72.html">/home/travis/.ansible/roles/robertdebock.clamav/tasks/main.yml</a></li>
+                
+                <li><a href="../files/73.html">/home/travis/.ansible/roles/robertdebock.clamav/handlers/main.yml</a></li>
+                
+                <li><a href="../files/74.html">/home/travis/.ansible/roles/robertdebock.dovecot/vars/main.yml</a></li>
+                
+                <li><a href="../files/75.html">/home/travis/.ansible/roles/robertdebock.dovecot/defaults/main.yml</a></li>
+                
+                <li><a href="../files/76.html">/home/travis/.ansible/roles/robertdebock.dovecot/meta/main.yml</a></li>
+                
+                <li><a href="../files/77.html">/home/travis/.ansible/roles/robertdebock.dovecot/tasks/main.yml</a></li>
+                
+                <li><a href="../files/78.html">/home/travis/.ansible/roles/robertdebock.dovecot/handlers/main.yml</a></li>
+                
+                <li><a href="../files/79.html">/home/travis/build/robertdebock/ansible-integration/ansible/webappservers.yml</a></li>
+                
+                <li><a href="../files/80.html">/home/travis/.ansible/roles/robertdebock.mysql/vars/main.yml</a></li>
+                
+                <li><a href="../files/81.html">/home/travis/.ansible/roles/robertdebock.mysql/defaults/main.yml</a></li>
+                
+                <li><a href="../files/82.html">/home/travis/.ansible/roles/robertdebock.mysql/meta/main.yml</a></li>
+                
+                <li><a href="../files/83.html">/home/travis/.ansible/roles/robertdebock.mysql/tasks/main.yml</a></li>
+                
+                <li><a href="../files/84.html">/home/travis/.ansible/roles/robertdebock.mysql/handlers/main.yml</a></li>
+                
+                <li><a href="../files/85.html">/home/travis/.ansible/roles/robertdebock.buildtools/vars/main.yml</a></li>
+                
+                <li><a href="../files/86.html">/home/travis/.ansible/roles/robertdebock.buildtools/meta/main.yml</a></li>
+                
+                <li><a href="../files/87.html">/home/travis/.ansible/roles/robertdebock.buildtools/tasks/main.yml</a></li>
+                
+                <li><a href="../files/88.html">/home/travis/.ansible/roles/robertdebock.python_pip/vars/main.yml</a></li>
+                
+                <li><a href="../files/89.html">/home/travis/.ansible/roles/robertdebock.python_pip/defaults/main.yml</a></li>
+                
+                <li><a href="../files/90.html">/home/travis/.ansible/roles/robertdebock.python_pip/meta/main.yml</a></li>
+                
+                <li><a href="../files/91.html">/home/travis/.ansible/roles/robertdebock.python_pip/tasks/main.yml</a></li>
+                
+                <li><a href="../files/92.html">/home/travis/.ansible/roles/robertdebock.openssl/vars/main.yml</a></li>
+                
+                <li><a href="../files/93.html">/home/travis/.ansible/roles/robertdebock.openssl/defaults/main.yml</a></li>
+                
+                <li><a href="../files/94.html">/home/travis/.ansible/roles/robertdebock.openssl/meta/main.yml</a></li>
+                
+                <li><a href="../files/95.html">/home/travis/.ansible/roles/robertdebock.openssl/tasks/main.yml</a></li>
+                
+                <li><a href="../files/96.html">/home/travis/.ansible/roles/robertdebock.httpd/vars/main.yml</a></li>
+                
+                <li><a href="../files/97.html">/home/travis/.ansible/roles/robertdebock.httpd/defaults/main.yml</a></li>
+                
+                <li><a href="../files/98.html">/home/travis/.ansible/roles/robertdebock.httpd/meta/main.yml</a></li>
+                
+                <li><a href="../files/99.html">/home/travis/.ansible/roles/robertdebock.httpd/tasks/main.yml</a></li>
+                
+                <li><a href="../files/100.html">/home/travis/.ansible/roles/robertdebock.httpd/handlers/main.yml</a></li>
+                
+                <li><a href="../files/101.html">/home/travis/.ansible/roles/robertdebock.phpmyadmin/vars/main.yml</a></li>
+                
+                <li><a href="../files/102.html">/home/travis/.ansible/roles/robertdebock.phpmyadmin/defaults/main.yml</a></li>
+                
+                <li><a href="../files/103.html">/home/travis/.ansible/roles/robertdebock.phpmyadmin/meta/main.yml</a></li>
+                
+                <li><a href="../files/104.html">/home/travis/.ansible/roles/robertdebock.phpmyadmin/tasks/main.yml</a></li>
+                
+                <li><a href="../files/105.html">/home/travis/.ansible/roles/robertdebock.java/vars/main.yml</a></li>
+                
+                <li><a href="../files/106.html">/home/travis/.ansible/roles/robertdebock.java/defaults/main.yml</a></li>
+                
+                <li><a href="../files/107.html">/home/travis/.ansible/roles/robertdebock.java/meta/main.yml</a></li>
+                
+                <li><a href="../files/108.html">/home/travis/.ansible/roles/robertdebock.java/tasks/main.yml</a></li>
+                
+                <li><a href="../files/109.html">/home/travis/.ansible/roles/robertdebock.tomcat/vars/main.yml</a></li>
+                
+                <li><a href="../files/110.html">/home/travis/.ansible/roles/robertdebock.tomcat/defaults/main.yml</a></li>
+                
+                <li><a href="../files/111.html">/home/travis/.ansible/roles/robertdebock.tomcat/meta/main.yml</a></li>
+                
+                <li><a href="../files/112.html">/home/travis/.ansible/roles/robertdebock.tomcat/tasks/main.yml</a></li>
+                
+                <li><a href="../files/113.html">/home/travis/.ansible/roles/robertdebock.tomcat/handlers/main.yml</a></li>
+                
+            </ul>
+        </details>
+        <details id="hosts" open="true">
+            <summary><i class="fas fa-server"></i> Hosts</summary>
+            <table class="pf-c-table pf-m-grid-md pf-m-compact" role="grid" id="host-table">
+                <thead>
+                    <tr role="row">
+                        <th role="columnheader" scope="col" class="pf-m-fit-content">Facts</th>
+                        <th role="columnheader" scope="col" class="pf-m-fit-content">Host</th>
+                        <th role="columnheader" scope="col" class="pf-m-fit-content">
+                            <div class="pf-c-alert pf-m-warning pf-m-inline pf-m-fit-content">
+                                <div class="pf-c-alert__icon" title="Tasks completed with changes">
+                                    <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                                    <p>&nbsp;CHANGED</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th role="columnheader" scope="col" class="pf-m-fit-content">
+                            <div class="pf-c-alert pf-m-danger pf-m-inline pf-m-fit-content">
+                                <div class="pf-c-alert__icon" title="Tasks completed with errors">
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                                    <p>&nbsp;FAILED</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th role="columnheader" scope="col" class="pf-m-fit-content">
+                            <div class="pf-c-alert pf-m-success pf-m-inline pf-m-fit-content">
+                                <div class="pf-c-alert__icon" title="Tasks completed successfully">
+                                    <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                    <p>&nbsp;OK</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th role="columnheader" scope="col" class="pf-m-fit-content">
+                            <div class="pf-c-alert pf-m-inline pf-m-fit-content">
+                                <div class="pf-c-alert__icon" title="Tasks was skipped">
+                                    <i class="fas fa-forward" aria-hidden="true"></i>
+                                    <p>&nbsp;SKIPPED</p>
+                                </div>
+                            </div>
+                        </th>
+                        <th role="columnheader" scope="col" class="pf-m-fit-content">
+                            <div class="pf-c-alert pf-m-danger pf-m-inline pf-m-fit-content">
+                                <div class="pf-c-alert__icon" title="Tasks completed with errors">
+                                    <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                                    <p>&nbsp;UNREACHABLE</p>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </details>
+        <details id="results" open="true">
+            <summary>Task results</summary>
+            
+            
+                
+                    No task results have been recorded for this playbook yet. It may be in progress or has been interrupted.
+                
+            
+        </details>
+    </div>
+</div>
+
+            </section>
+            <section class="pf-c-page__main-section">
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

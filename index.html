@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="layout-pf">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="static/css/patternfly.min.css">
+    <link rel="stylesheet" href="static/css/ara.css">
+    
+    <link rel="shortcut icon" href="static/images/favicon.ico">
+    
+    
+</head>
+
+<body>
+    <div class="pf-c-page">
+        <header role="banner" class="pf-c-page__header">
+            <div class="pf-c-page__header-brand">
+                <a class="pf-c-page__header-brand-link" href="">
+                    <img class="pf-c-brand" src="static/images/logo.svg" alt="ARA Records Ansible">
+                </a>
+            </div>
+            <div class="pf-c-page__header-nav">
+                <nav class="pf-c-nav" aria-label="Global">
+                    <button class="pf-c-nav__scroll-button" aria-label="Scroll left">
+                        <i class="fas fa-angle-left" aria-hidden="true"></i>
+                    </button>
+                    <ul class="pf-c-nav__horizontal-list">
+                        <li class="pf-c-nav__item">
+                            
+                            <a href="" class="pf-c-nav__link pf-m-current" aria-current="page">Playbooks</a>
+                            
+                        </li>
+                        
+
+
+                        <li class="pf-c-nav__item">
+                            <a href="https://ara.readthedocs.io" class="pf-c-nav__link" target="_blank">Docs</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main role="main" class="pf-c-page__main">
+            <section class="pf-c-page__main-section pf-m-light">
+                
+
+
+<div class="pf-l-flex">
+    <table class="pf-c-table pf-m-grid-md pf-m-compact" role="grid" aria-label="Playbook runs" id="playbooks">
+        <thead>
+            <tr role="row">
+                <th role="columnheader" scope="col" class="pf-m-fit-content">Status</th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content pf-c-table__sort">
+                    
+Date
+
+                </th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content pf-c-table__sort">
+                    
+Duration
+
+                </th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content">Ansible version</th>
+                <th role="columnheader" scope="col">Name (or path)</th>
+                <th role="columnheader" scope="col">Labels</th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content">Hosts</th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content">Plays</th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content">Tasks</th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content">Results</th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content">Files</th>
+                <th role="columnheader" scope="col" class="pf-m-fit-content">Records</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody role="rowgroup">
+            
+            <tr role="row" class="pf-m-success">
+                <td role="cell" data-label="Status" class="pf-c-table__icon pf-m-fit-content">
+                    
+                    <div class="pf-c-alert pf-m-success pf-m-inline">
+                    
+                        
+<div class="pf-c-alert__icon" title="Playbook completed successfully">
+    <i class="fas fa-check-circle" aria-hidden="true"></i>
+</div>
+
+                    </div>
+                </td>
+                <td role="cell" data-label="Date" class="pf-m-fit-content">
+                    <span title="Date at which the playbook started">
+                        18 Nov 2020 13:02:29 +0000
+                    </span>
+                </td>
+                <td role="cell" data-label="Duration" class="pf-m-fit-content">
+                    <span title="Duration of the playbook (HH:MM:SS.ms)">
+                        00:00:00.24
+                    </span>
+                </td>
+                <td role="cell" data-label="Ansible version" class="pf-m-fit-content">
+                    2.10.3
+                </td>
+                <td role="cell" data-label="Name (or path)" class="pf-m-fit-content">
+                    
+                        <a href="playbooks/1.html" title="/home/travis/build/robertdebock/ansible-integration/ansible/playbook.yml">
+                    
+                    ...ansible-integration/ansible/playbook.yml
+                    </a>
+                </td>
+                <td role="cell" data-label="Labels" class="pf-m-wrap">
+                    <div class="pf-l-flex">
+                    
+                    
+                    <span class="pf-c-badge pf-m-unread">check:False</span>
+                    
+                    
+                    
+                    <span class="pf-c-badge pf-m-unread">tags:all</span>
+                    
+                    
+                    </div>
+                </td>
+                <td role="cell" data-label="Hosts" class="pf-m-fit-content">
+                    <a href="playbooks/1.html#hosts">0</a>
+                </td>
+                <td role="cell" data-label="Plays" class="pf-m-fit-content">
+                    <a href="playbooks/1.html#plays">3</a>
+                </td>
+                <td role="cell" data-label="Tasks" class="pf-m-fit-content">
+                    <a href="playbooks/1.html#results">0</a>
+                </td>
+                <td role="cell" data-label="Results" class="pf-m-fit-content">
+                    <a href="playbooks/1.html#results">0</a>
+                </td>
+                <td role="cell" data-label="Files" class="pf-m-fit-content">
+                    <a href="playbooks/1.html#files">113</a>
+                </td>
+                <td role="cell" data-label="Records" class="pf-m-fit-content">
+                    <a href="playbooks/1.html#records">0</a>
+                </td>
+                <td role="cell" data-label="CLI arguments">
+                    <details id="cli-arguments-details">
+                        <summary><a>CLI arguments</a></summary>
+                        <table class="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="cli-arguments" id="cli-arguments">
+                            <thead>
+                                <tr role="row">
+                                    <th role="columnheader" scope="col">Argument</th>
+                                    <th role="columnheader" scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody role="rowgroup">
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">version</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">verbosity</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">0</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">ask_pass</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">private_key_file</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">remote_user</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">connection</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">smart</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">timeout</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">10</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">ssh_common_args</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content"></td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">sftp_extra_args</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content"></td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">scp_extra_args</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content"></td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">ssh_extra_args</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content"></td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">force_handlers</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">flush_cache</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">become</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">become_method</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">sudo</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">become_user</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">become_ask_pass</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">tags</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">[&#39;all&#39;]</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">skip_tags</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">[]</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">check</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">syntax</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">diff</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">inventory</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">[&#39;/home/travis/build/robertdebock/ansible-integration/ansible/inventory&#39;]</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">listhosts</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">subset</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">extra_vars</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">Not saved by ARA as configured by &#39;ignored_arguments&#39;</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">vault_ids</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">[]</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">ask_vault_pass</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">vault_password_files</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">[]</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">forks</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">5</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">module_path</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">listtasks</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">listtags</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">step</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">False</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">start_at_task</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">None</td>
+                                </tr>
+                                
+                                <tr role="row">
+                                    <td role="cell" data-label="Argument" class="pf-m-fit-content" style="white-space: nowrap;">args</td>
+                                    <td role="cell" data-label="Value" class="pf-m-fit-content">[&#39;playbook.yml&#39;]</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </details>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+
+            </section>
+            <section class="pf-c-page__main-section">
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
